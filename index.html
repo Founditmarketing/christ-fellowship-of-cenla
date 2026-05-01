@@ -3,11 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Christ Fellowship of Cenla | Reformed Baptist Church in Central Louisiana</title>
+    <meta name="description" content="Christ Fellowship of Cenla is a Reformed Baptist church in Central Louisiana devoted to the fellowship of the gospel and the 1689 London Baptist Confession. Sunday services at 10:30 AM." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Christ Fellowship of Cenla" />
+    <meta property="og:description" content="A church in Central Louisiana devoted to the fellowship of the gospel and the Reformed Faith, as expressed in the 1689 London Baptist Confession." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cfcenla.com" />
+    <meta property="og:image" content="/images/logo.jpeg" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/images/logo.jpeg" />
+    <link rel="apple-touch-icon" href="/images/logo.jpeg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://cfcenla.com" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- JSON-LD Church Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Church",
+      "name": "Christ Fellowship of Cenla",
+      "alternateName": "Christ Fellowship of Central Louisiana",
+      "description": "A Reformed Baptist church in Central Louisiana devoted to the fellowship of the gospel and the 1689 London Baptist Confession.",
+      "url": "https://cfcenla.com",
+      "telephone": "+1-318-419-4497",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "701 4th St",
+        "addressLocality": "Alexandria",
+        "addressRegion": "LA",
+        "postalCode": "71301",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 31.3117,
+        "longitude": -92.4492
+      },
+      "sameAs": [
+        "https://www.facebook.com/cfcenla/",
+        "https://www.youtube.com/@christfellowshipofcenla3356",
+        "https://www.sermonaudio.com/source_detail.asp?sourceid=christfelowship"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:30",
+          "closes": "12:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "18:30",
+          "closes": "19:30"
+        }
+      ]
+    }
+    </script>
   </body>
 </html>
-

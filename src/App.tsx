@@ -95,9 +95,8 @@ const Hero = () => {
           <div className="relative group mb-8">
             <div className="absolute -inset-1 bg-gold/30 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <img 
-              src="https://cfcenla.com/wp-content/uploads/2022/07/294326050_2277609865711722_1542485184882779704_n-e1658509184853-300x182.jpeg" 
+              src="/images/logo.jpeg" 
               alt="Christ Fellowship Logo" 
-              referrerPolicy="no-referrer"
               className="relative w-48 lg:w-64 rounded-lg border border-cream shadow-2xl"
             />
           </div>
@@ -304,9 +303,8 @@ const AboutUs = () => {
               <div className="flex flex-col items-center text-center">
                 <div className="w-32 h-32 rounded-full border-2 border-gold p-1 shadow-lg mb-6 overflow-hidden">
                   <img 
-                    src="https://cfcenla.com/wp-content/uploads/2023/08/IMG_8735.jpeg" 
+                    src="/images/jeffrey-mercer.jpeg" 
                     alt="Jeffrey Mercer" 
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
@@ -329,9 +327,8 @@ const AboutUs = () => {
               <div className="flex flex-col items-center text-center">
                 <div className="w-32 h-32 rounded-full border-2 border-gold p-1 shadow-lg mb-6 overflow-hidden">
                   <img 
-                    src="https://cfcenla.com/wp-content/uploads/2025/07/justinmorganheadshot-7463-scaled.jpeg" 
+                    src="/images/justin-morgan.jpeg" 
                     alt="Justin Morgan" 
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
@@ -355,9 +352,8 @@ const Gospel = () => {
     <section id="gospel" className="py-0 bg-primary-dark scroll-mt-20">
       <div className="relative h-[60vh] overflow-hidden">
         <img 
-          src="https://cfcenla.com/wp-content/uploads/2025/02/Heading.jpg" 
+          src="/images/gospel-heading.jpg" 
           alt="The Gospel" 
-          referrerPolicy="no-referrer"
           className="w-full h-full object-cover grayscale-[0.2]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/40 to-transparent"></div>
@@ -383,11 +379,11 @@ const Gospel = () => {
           </motion.div>
 
           <article className="prose prose-invert prose-cream max-w-none">
-            <h3 className="font-serif text-3xl md:text-5xl text-gold mb-10 flex items-center space-x-4">
+            <h2 className="font-serif text-3xl md:text-5xl text-gold mb-10 flex items-center space-x-4">
               <span className="h-px bg-gold/30 flex-grow"></span>
               <span>TWO MEN</span>
               <span className="h-px bg-gold/30 flex-grow"></span>
-            </h3>
+            </h2>
 
             <div className="space-y-8 text-cream/80 text-lg leading-[1.8] font-light">
               <p>
@@ -415,11 +411,11 @@ const Gospel = () => {
               </p>
             </div>
 
-            <h3 className="font-serif text-3xl md:text-5xl text-gold my-16 flex items-center space-x-4">
+            <h2 className="font-serif text-3xl md:text-5xl text-gold my-16 flex items-center space-x-4">
               <span className="h-px bg-gold/30 flex-grow"></span>
               <span>ALL MEN</span>
               <span className="h-px bg-gold/30 flex-grow"></span>
-            </h3>
+            </h2>
 
             <div className="space-y-8 text-cream/80 text-lg leading-[1.8] font-light">
               <p>
@@ -593,19 +589,28 @@ const Contact = () => {
           >
             <div className="absolute inset-0 bg-cross-pattern opacity-10"></div>
             <div className="relative z-10">
-              <h3 className="font-serif text-3xl md:text-4xl text-cream mb-6">Register & Give Online</h3>
+              <h3 className="font-serif text-3xl md:text-4xl text-cream mb-6">Give & Register Online</h3>
               <p className="text-cream/80 text-lg leading-relaxed mb-10 font-light">
                 Support the ministry of Christ Fellowship of Cenla. All giving and event registration is handled securely through Planning Center.
               </p>
               
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <a 
-                  href="https://www.planningcenter.com/pricing" 
+                  href="https://christ-fellowship-of-cenla-413988.churchcenter.com/giving" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full py-5 bg-gold text-primary-dark transition-all duration-300 font-extrabold uppercase tracking-widest rounded-xl flex items-center justify-center space-x-3 hover:bg-cream hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  <span className="text-lg">Give & Register Online</span>
+                  <span className="text-lg">Give Online</span>
+                  <ChevronRight size={20} />
+                </a>
+                <a 
+                  href="https://christ-fellowship-of-cenla-413988.churchcenter.com/registrations" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full py-5 border-2 border-gold text-gold transition-all duration-300 font-extrabold uppercase tracking-widest rounded-xl flex items-center justify-center space-x-3 hover:bg-gold hover:text-primary-dark hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <span className="text-lg">Conference Registration</span>
                   <ChevronRight size={20} />
                 </a>
                 <p className="text-cream/40 text-[10px] text-center uppercase tracking-widest font-bold">
@@ -639,8 +644,8 @@ const Footer = () => {
             <div className="space-y-4">
               <h5 className="text-gold font-bold uppercase tracking-widest text-xs mb-6">Navigation</h5>
               <ul className="space-y-3">
-                {['Home', 'About Us', 'Gospel', 'Contact Us'].map(l => (
-                  <li key={l}><a href={`#${l.toLowerCase().replace(' ', '')}`} className="text-cream/70 hover:text-gold transition-colors">{l}</a></li>
+                {[{name: 'Home', href: '#home'}, {name: 'About Us', href: '#about'}, {name: 'Gospel', href: '#gospel'}, {name: 'Contact Us', href: '#contact'}].map(l => (
+                  <li key={l.name}><a href={l.href} className="text-cream/70 hover:text-gold transition-colors">{l.name}</a></li>
                 ))}
               </ul>
             </div>
@@ -679,7 +684,7 @@ const Footer = () => {
           </div>
           <div className="text-center md:text-right">
             <p className="text-cream/40 text-[10px] tracking-widest font-bold uppercase mb-2">
-              &copy; 2025 Christ Fellowship of Cenla &middot; cfcenla.com
+              &copy; {new Date().getFullYear()} Christ Fellowship of Cenla &middot; cfcenla.com
             </p>
             <p className="text-cream/30 text-[9px] tracking-[0.2em] font-light uppercase">
               All Rights Reserved
