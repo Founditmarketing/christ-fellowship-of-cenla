@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Menu, X, BookOpen, Cross, Users, MapPin, Phone, Clock, 
-  ExternalLink, Facebook, Youtube, Play, ChevronRight 
+  Menu, X, Cross, MapPin, Phone, Clock, 
+  ExternalLink, Facebook, Youtube, ChevronRight 
 } from 'lucide-react';
 
 // --- Components ---
@@ -112,7 +112,7 @@ const Hero = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-gold font-bold uppercase tracking-[0.3em] text-lg md:text-xl mb-6"
           >
-            A church devoted to the fellowship of the gospel.
+            Christ Fellowship Church
           </motion.p>
 
           <motion.p 
@@ -121,7 +121,7 @@ const Hero = () => {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-cream/80 text-base md:text-lg max-w-2xl mb-10 leading-relaxed font-light"
           >
-            We are a church in Central Louisiana devoted to the fellowship of the gospel, and beyond that to the Reformed Faith, as it is expressed in the 1689 London Baptist Confession.
+            We are a church in Central Louisiana that is devoted to the fellowship of the gospel, and beyond that to the Reformed Faith, as it is expressed in the 1689 London Baptist Confession.
           </motion.p>
 
           <motion.div 
@@ -181,7 +181,7 @@ const AboutUs = () => {
       {/* 2A - Our Story */}
       <section className="py-24 bg-cream relative">
         <div className="container mx-auto px-6">
-          <SectionHeading label="ABOUT US" title="Who We Are" />
+          <SectionHeading label="ABOUT US" title="Christ Fellowship Church" />
           
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -202,41 +202,6 @@ const AboutUs = () => {
               <ChevronRight size={18} />
             </a>
           </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {[
-              { 
-                icon: <BookOpen className="text-gold" />, 
-                title: "The Word", 
-                text: "We are committed to expository preaching and the authority of Holy Scripture in all matters of faith and life." 
-              },
-              { 
-                icon: <Cross className="text-gold" />, 
-                title: "The Gospel", 
-                text: "We exist to proclaim the good news of Jesus Christ — His life, death, and resurrection for sinners." 
-              },
-              { 
-                icon: <Users className="text-gold" />, 
-                title: "The Fellowship", 
-                text: "We are a family of believers devoted to one another in love, gathered around Christ." 
-              }
-            ].map((card, i) => (
-              <motion.div 
-                key={card.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="bg-white p-10 rounded-lg shadow-sm border-t-4 border-gold group hover:shadow-xl transition-all duration-300"
-              >
-                <div className="mb-6 p-4 bg-cream w-fit rounded-full group-hover:bg-gold group-hover:text-cream transition-colors">
-                  {card.icon}
-                </div>
-                <h3 className="font-serif text-2xl font-bold mb-4 text-primary-dark">{card.title}</h3>
-                <p className="text-muted leading-relaxed">{card.text}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -271,7 +236,7 @@ const AboutUs = () => {
 
             <div className="text-center">
               <p className="text-cream/60 italic mb-10 text-sm uppercase tracking-widest">
-                For a fuller description of our beliefs, see the 1689 Baptist Confession of Faith.
+                For a fuller description of our beliefs click the button below to see the 1689 Baptist Confession of Faith.
               </p>
             <a 
               href="https://founders.org/library-book/1689-confession/" 
@@ -290,7 +255,7 @@ const AboutUs = () => {
       {/* 2C - Leadership */}
       <section className="py-24 bg-cream">
         <div className="container mx-auto px-6">
-          <SectionHeading label="LEADERSHIP" title="Pastors & Elders" />
+          <SectionHeading label="LEADERSHIP" title="Leadership" />
           
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Jeffrey Mercer */}
@@ -358,7 +323,7 @@ const Gospel = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/40 to-transparent"></div>
         <div className="absolute bottom-12 left-0 right-0 text-center container mx-auto px-6">
-          <SectionHeading label="THE GOSPEL OF JESUS CHRIST" title="Good News for Sinners" light />
+          <SectionHeading label="THE GOSPEL" title="The Gospel of Jesus Christ" light />
         </div>
       </div>
 
@@ -489,7 +454,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-cream scroll-mt-20">
       <div className="container mx-auto px-6">
-        <SectionHeading label="CONTACT US" title="Come Worship With Us" />
+        <SectionHeading label="CONTACT US" title="Reach Out to Us!" />
         
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Info Side */}
@@ -636,7 +601,7 @@ const Footer = () => {
               <span className="text-xs text-gold tracking-[0.2em] uppercase font-bold -mt-1 underline decoration-gold/30">of Central Louisiana</span>
             </a>
             <p className="text-cream/60 max-w-sm font-light">
-              Devoted to the fellowship of the gospel and the Reformed Faith.
+              A church in Central Louisiana that is devoted to the fellowship of the gospel, and beyond that to the Reformed Faith, as it is expressed in the 1689 London Baptist Confession.
             </p>
           </div>
 
