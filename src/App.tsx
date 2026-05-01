@@ -19,9 +19,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Gospel', href: '#gospel' },
+    { name: 'The Gospel', href: '#gospel' },
+    { name: 'Our Beliefs', href: '#beliefs' },
     { name: 'Contact Us', href: '#contact' },
+    { name: 'Leadership', href: '#leadership' },
   ];
 
   return (
@@ -130,8 +131,8 @@ const Hero = () => {
             transition={{ delay: 0.9, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 mb-16"
           >
-            <a href="#about" className="px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-primary-dark transition-all duration-300 font-bold uppercase tracking-widest rounded-[2px] text-[11px]">
-              Learn More
+            <a href="#beliefs" className="px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-primary-dark transition-all duration-300 font-bold uppercase tracking-widest rounded-[2px] text-[11px]">
+              Our Beliefs
             </a>
             <a href="#gospel" className="px-10 py-4 bg-gold text-primary-dark hover:bg-cream transition-all duration-300 font-bold uppercase tracking-widest rounded-[2px] text-[11px]">
               The Gospel
@@ -175,69 +176,40 @@ const SectionHeading = ({ label, title, light = false, centered = true }) => (
   </motion.div>
 );
 
-const AboutUs = () => {
+const OurBeliefs = () => {
   return (
-    <div id="about" className="scroll-mt-20">
-      {/* 2A - Our Story */}
-      <section className="py-24 bg-cream relative">
-        <div className="container mx-auto px-6">
-          <SectionHeading label="ABOUT US" title="Christ Fellowship Church" />
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center mb-16"
-          >
-            <p className="text-xl md:text-2xl text-ink/80 leading-relaxed mb-8">
-              We are a church in Central Louisiana that is devoted to the fellowship of the gospel, and beyond that to the Reformed Faith, as it is expressed in the 1689 London Baptist Confession.
-            </p>
-            <a 
-              href="https://founders.org/library-book/1689-confession/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-8 py-3 border-2 border-gold text-gold hover:bg-gold hover:text-cream transition-all duration-300 font-bold uppercase tracking-widest text-sm"
-            >
-              <span>1689 London Baptist Confession</span>
-              <ChevronRight size={18} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 2B - Our Beliefs */}
-      <section id="beliefs" className="py-24 bg-primary-dark relative overflow-hidden">
-        <div className="absolute inset-0 bg-cross-pattern opacity-10"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.03] select-none">
-          <Cross size={400} className="text-cream" />
-        </div>
+    <section id="beliefs" className="py-24 bg-primary-dark relative overflow-hidden scroll-mt-20">
+      <div className="absolute inset-0 bg-cross-pattern opacity-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-[0.03] select-none">
+        <Cross size={400} className="text-cream" />
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <SectionHeading label="OUR BELIEFS" title="The Christ Fellowship Statement of the Gospel" light />
         
-        <div className="container mx-auto px-6 relative z-10">
-          <SectionHeading label="OUR BELIEFS" title="The Christ Fellowship Statement of the Gospel" light />
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="h-0.5 w-24 bg-gold mx-auto mb-12"></div>
           
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="h-0.5 w-24 bg-gold mx-auto mb-12"></div>
-            
-            <div className="relative">
-              <div className="absolute -top-10 -left-6 text-gold/10 font-serif text-[120px] leading-none pointer-events-none select-none">&ldquo;</div>
-              <p className="font-serif italic text-cream/90 text-lg md:text-2xl leading-[1.9] text-center mb-12 border-l-4 border-gold pl-8 md:pl-12">
-                We believe that Jesus is the Christ, the Son of the Living God, that God raised Him from the dead and He is Lord, and therefore we have nowhere else to go, for He has the words of eternal life.
-                <br /><br />
-                We believe that He is the promised Son who crushed the serpent's head, that He was born of the Virgin Mary by the Power of the Holy Spirit, He therefore is truly Man and yet truly God, nevertheless He is but One Person, the Lord Jesus Christ, who by His incarnation became the New Adam who obeyed the Law of God on our behalf, all the way to the point of death, even the death of the cross, that He was buried, but according to the Scriptures and His own righteousness, He was not allowed to suffer decay but was raised up on the third day by the power of God for our justification, and after appearing to many witnesses He ascended into heaven where He sat down at the right hand of the Majesty on high, where having finished His work He ever lives to intercede for us, and is able to save to the uttermost any who come to God through Him, if they come by faith alone in Him alone apart from works of the Law, and that from this position of glory He rules the world, that He will return to judge those who do not obey the gospel and to save those who do, and that having been raised from the dead in their glorious bodies, fully redeemed from the curse of sin, the law, and the grave, they shall ever be with the Lord, shall ever go on increasing in the knowledge of His grace, and shall ever go on glorifying Him and enjoying Him, unto the ages of the ages, Amen.
-              </p>
-            </div>
+          <div className="relative">
+            <div className="absolute -top-10 -left-6 text-gold/10 font-serif text-[120px] leading-none pointer-events-none select-none">&ldquo;</div>
+            <p className="font-serif italic text-cream/90 text-lg md:text-2xl leading-[1.9] text-center mb-12 border-l-4 border-gold pl-8 md:pl-12">
+              We believe that Jesus is the Christ, the Son of the Living God, that God raised Him from the dead and He is Lord, and therefore we have nowhere else to go, for He has the words of eternal life.
+              <br /><br />
+              We believe that He is the promised Son who crushed the serpent's head, that He was born of the Virgin Mary by the Power of the Holy Spirit, He therefore is truly Man and yet truly God, nevertheless He is but One Person, the Lord Jesus Christ, who by His incarnation became the New Adam who obeyed the Law of God on our behalf, all the way to the point of death, even the death of the cross, that He was buried, but according to the Scriptures and His own righteousness, He was not allowed to suffer decay but was raised up on the third day by the power of God for our justification, and after appearing to many witnesses He ascended into heaven where He sat down at the right hand of the Majesty on high, where having finished His work He ever lives to intercede for us, and is able to save to the uttermost any who come to God through Him, if they come by faith alone in Him alone apart from works of the Law, and that from this position of glory He rules the world, that He will return to judge those who do not obey the gospel and to save those who do, and that having been raised from the dead in their glorious bodies, fully redeemed from the curse of sin, the law, and the grave, they shall ever be with the Lord, shall ever go on increasing in the knowledge of His grace, and shall ever go on glorifying Him and enjoying Him, unto the ages of the ages, Amen.
+            </p>
+          </div>
 
-            <div className="h-0.5 w-24 bg-gold mx-auto mt-12 mb-8"></div>
+          <div className="h-0.5 w-24 bg-gold mx-auto mt-12 mb-8"></div>
 
-            <div className="text-center">
-              <p className="text-cream/60 italic mb-10 text-sm uppercase tracking-widest">
-                For a fuller description of our beliefs click the button below to see the 1689 Baptist Confession of Faith.
-              </p>
+          <div className="text-center">
+            <p className="text-cream/60 italic mb-10 text-sm uppercase tracking-widest">
+              For a fuller description of our beliefs click the button below to see the 1689 Baptist Confession of Faith.
+            </p>
             <a 
               href="https://founders.org/library-book/1689-confession/" 
               target="_blank" 
@@ -247,68 +219,70 @@ const AboutUs = () => {
               <span>View the 1689 Confession</span>
               <ChevronRight size={18} />
             </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const Leadership = () => {
+  return (
+    <section id="leadership" className="py-24 bg-cream scroll-mt-20">
+      <div className="container mx-auto px-6">
+        <SectionHeading label="LEADERSHIP" title="Leadership" />
+        
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          {/* Jeffrey Mercer */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white p-10 rounded-2xl shadow-xl border-t-[6px] border-gold"
+          >
+            <div className="flex flex-col items-center text-center">
+              <div className="w-32 h-32 rounded-full border-2 border-gold p-1 shadow-lg mb-6 overflow-hidden">
+                <img 
+                  src="/images/jeffrey-mercer.jpeg" 
+                  alt="Jeffrey Mercer" 
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <h3 className="font-serif text-3xl font-bold text-primary-dark mb-1">Jeffrey Mercer</h3>
+              <p className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-6">Pastor</p>
+              <div className="w-12 h-0.5 bg-cream mb-6"></div>
+              <p className="text-ink/70 leading-relaxed italic">
+                &ldquo;Jeffrey Mercer was called to the gospel ministry in 2006, after which he entered into seminary. Then in 2010 he was called to pastor Christ Fellowship of Cenla, where he has ministered ever since. He is husband to Challie, and father to Anabelle and Abram. Jeffrey's favorite verses are the verses on which he's currently preaching.&rdquo;
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Justin Morgan */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white p-10 rounded-2xl shadow-xl border-t-[6px] border-gold"
+          >
+            <div className="flex flex-col items-center text-center">
+              <div className="w-32 h-32 rounded-full border-2 border-gold p-1 shadow-lg mb-6 overflow-hidden">
+                <img 
+                  src="/images/justin-morgan.jpeg" 
+                  alt="Justin Morgan" 
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <h3 className="font-serif text-3xl font-bold text-primary-dark mb-1">Justin Morgan</h3>
+              <p className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-6">Pastor</p>
+              <div className="w-12 h-0.5 bg-cream mb-6"></div>
+              <p className="text-ink/70 leading-relaxed italic">
+                &ldquo;Justin Morgan began attending Christ Fellowship in 2011 and was called to the gospel ministry in 2024. He is currently enrolled at Grace Bible Theological Seminary in the Certificate of Ministry Program. He is husband to Cacy, and father to Liam, Truett, Conrad, and Elliot.&rdquo;
+              </p>
             </div>
           </motion.div>
         </div>
-      </section>
-
-      {/* 2C - Leadership */}
-      <section className="py-24 bg-cream">
-        <div className="container mx-auto px-6">
-          <SectionHeading label="LEADERSHIP" title="Leadership" />
-          
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {/* Jeffrey Mercer */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white p-10 rounded-2xl shadow-xl border-t-[6px] border-gold"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full border-2 border-gold p-1 shadow-lg mb-6 overflow-hidden">
-                  <img 
-                    src="/images/jeffrey-mercer.jpeg" 
-                    alt="Jeffrey Mercer" 
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-                <h3 className="font-serif text-3xl font-bold text-primary-dark mb-1">Jeffrey Mercer</h3>
-                <p className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-6">Pastor</p>
-                <div className="w-12 h-0.5 bg-cream mb-6"></div>
-                <p className="text-ink/70 leading-relaxed italic">
-                  &ldquo;Jeffrey Mercer was called to the gospel ministry in 2006, after which he entered into seminary. Then in 2010 he was called to pastor Christ Fellowship of Cenla, where he has ministered ever since. He is husband to Challie, and father to Anabelle and Abram. Jeffrey's favorite verses are the verses on which he's currently preaching.&rdquo;
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Justin Morgan */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white p-10 rounded-2xl shadow-xl border-t-[6px] border-gold"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full border-2 border-gold p-1 shadow-lg mb-6 overflow-hidden">
-                  <img 
-                    src="/images/justin-morgan.jpeg" 
-                    alt="Justin Morgan" 
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-                <h3 className="font-serif text-3xl font-bold text-primary-dark mb-1">Justin Morgan</h3>
-                <p className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-6">Pastor</p>
-                <div className="w-12 h-0.5 bg-cream mb-6"></div>
-                <p className="text-ink/70 leading-relaxed italic">
-                  &ldquo;Justin Morgan began attending Christ Fellowship in 2011 and was called to the gospel ministry in 2024. He is currently enrolled at Grace Bible Theological Seminary in the Certificate of Ministry Program. He is husband to Cacy, and father to Liam, Truett, Conrad, and Elliot.&rdquo;
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
@@ -436,11 +410,7 @@ const Gospel = () => {
 
           <div className="mt-24 flex flex-col sm:flex-row gap-6 justify-center">
             <a href="#beliefs" className="px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-primary-dark transition-all duration-300 font-bold uppercase tracking-widest rounded-[2px] inline-flex items-center space-x-2 text-[11px]">
-              <span>Our Beliefs</span>
-              <ChevronRight size={18} />
-            </a>
-            <a href="#contact" className="px-10 py-4 bg-gold text-primary-dark hover:bg-cream transition-all duration-300 font-bold uppercase tracking-widest rounded-[2px] inline-flex items-center space-x-2 text-[11px]">
-              <span>Contact Us</span>
+              <span>Learn More About Our Beliefs</span>
               <ChevronRight size={18} />
             </a>
           </div>
@@ -554,10 +524,7 @@ const Contact = () => {
           >
             <div className="absolute inset-0 bg-cross-pattern opacity-10"></div>
             <div className="relative z-10">
-              <h3 className="font-serif text-3xl md:text-4xl text-cream mb-6">Give & Register Online</h3>
-              <p className="text-cream/80 text-lg leading-relaxed mb-10 font-light">
-                Support the ministry of Christ Fellowship of Cenla. All giving and event registration is handled securely through Planning Center.
-              </p>
+              <h3 className="font-serif text-3xl md:text-4xl text-cream mb-10">Give & Register Online</h3>
               
               <div className="space-y-4">
                 <a 
@@ -609,7 +576,7 @@ const Footer = () => {
             <div className="space-y-4">
               <h5 className="text-gold font-bold uppercase tracking-widest text-xs mb-6">Navigation</h5>
               <ul className="space-y-3">
-                {[{name: 'Home', href: '#home'}, {name: 'About Us', href: '#about'}, {name: 'Gospel', href: '#gospel'}, {name: 'Contact Us', href: '#contact'}].map(l => (
+                {[{name: 'Home', href: '#home'}, {name: 'The Gospel', href: '#gospel'}, {name: 'Our Beliefs', href: '#beliefs'}, {name: 'Contact Us', href: '#contact'}, {name: 'Leadership', href: '#leadership'}].map(l => (
                   <li key={l.name}><a href={l.href} className="text-cream/70 hover:text-gold transition-colors">{l.name}</a></li>
                 ))}
               </ul>
@@ -668,9 +635,10 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <AboutUs />
         <Gospel />
+        <OurBeliefs />
         <Contact />
+        <Leadership />
       </main>
       <Footer />
     </div>
