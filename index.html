@@ -1,73 +1,673 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christ Fellowship of Cenla | Reformed Baptist Church in Central Louisiana</title>
-    <meta name="description" content="Christ Fellowship of Cenla is a Reformed Baptist church in Central Louisiana devoted to the fellowship of the gospel and the 1689 London Baptist Confession. Sunday services at 10:30 AM." />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Christ Fellowship of Cenla" />
-    <meta property="og:description" content="A church in Central Louisiana devoted to the fellowship of the gospel and the Reformed Faith, as expressed in the 1689 London Baptist Confession." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://cfcenla.com" />
-    <meta property="og:image" content="/images/logo.jpeg" />
-    <meta property="og:locale" content="en_US" />
+  <!-- SEO -->
+  <title>Christ Fellowship Church | Reformed Baptist Church in Alexandria, LA</title>
+  <meta name="description" content="Christ Fellowship Church is a confessional Reformed Baptist congregation in Alexandria, Louisiana, holding to the 1689 London Baptist Confession. Join us Sundays at 10:30 AM in the Lake Charles Room, Holiday Inn Downtown Alexandria." />
+  <meta name="keywords" content="Reformed Baptist church Alexandria LA, confessional Baptist church Alexandria, 1689 London Baptist Confession, expository preaching Alexandria Louisiana, Reformed church Central Louisiana" />
+  <link rel="canonical" href="https://cfcenla.com/" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="/images/logo.jpeg" />
-    <link rel="apple-touch-icon" href="/images/logo.jpeg" />
+  <meta property="og:title" content="Christ Fellowship Church | Reformed Baptist Church in Alexandria, LA" />
+  <meta property="og:description" content="A confessional Reformed Baptist congregation in Alexandria, Louisiana, holding to the 1689 London Baptist Confession." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cfcenla.com/" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://cfcenla.com" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-
-    <!-- JSON-LD Church Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Church",
-      "name": "Christ Fellowship of Cenla",
-      "alternateName": "Christ Fellowship of Central Louisiana",
-      "description": "A Reformed Baptist church in Central Louisiana devoted to the fellowship of the gospel and the 1689 London Baptist Confession.",
-      "url": "https://cfcenla.com",
-      "telephone": "+1-318-419-4497",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "701 4th St",
-        "addressLocality": "Alexandria",
-        "addressRegion": "LA",
-        "postalCode": "71301",
-        "addressCountry": "US"
+  <!-- Church Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    "name": "Christ Fellowship Church",
+    "alternateName": "Christ Fellowship Church of Cenla",
+    "url": "https://cfcenla.com",
+    "telephone": "+13184194497",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "701 4th St, Lake Charles Room, Holiday Inn Downtown Alexandria",
+      "addressLocality": "Alexandria",
+      "addressRegion": "LA",
+      "postalCode": "71301",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 31.3113,
+      "longitude": -92.4452
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:30",
+        "closes": "12:00"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 31.3117,
-        "longitude": -92.4492
-      },
-      "sameAs": [
-        "https://www.facebook.com/cfcenla/",
-        "https://www.youtube.com/@christfellowshipofcenla3356",
-        "https://www.sermonaudio.com/source_detail.asp?sourceid=christfelowship"
-      ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "09:30",
-          "closes": "12:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
-          "opens": "18:30",
-          "closes": "19:30"
-        }
-      ]
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "18:30",
+        "closes": "19:30"
+      }
+    ],
+    "sameAs": ["https://www.facebook.com/cfcenla"]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ======= CUSTOM PROPERTIES ======= */
+    :root {
+      --parchment:    #F4EFE6;
+      --parchment-dk: #ECE5D5;
+      --cream:        #FAF8F3;
+      --ink:          #1A1A1A;
+      --ink-soft:     #3D3530;
+      --ink-faint:    #5C534C;
+      --oxblood:      #6B2226;
+      --oxblood-dk:   #531A1D;
+      --oxblood-glow: rgba(107,34,38,0.08);
+      --brass:        #8A6D3B;
+      --brass-light:  #A6894F;
+      --hairline:     #C9BEA8;
+      --hairline-lt:  #DDD6C5;
+      --white-warm:   rgba(255,252,247,0.55);
+
+      --font-display: 'Cormorant Garamond', 'Garamond', Georgia, serif;
+      --font-body:    'Lora', Georgia, serif;
+
+      --max-w: 800px;
+      --max-w-wide: 1080px;
+      --pad: clamp(1.25rem, 5vw, 3.5rem);
     }
-    </script>
-  </body>
+
+    /* ======= RESET ======= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 17px; }
+    @media (min-width: 1200px) { html { font-size: 18px; } }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--parchment);
+      color: var(--ink);
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Paper grain */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    /* ======= TYPOGRAPHY ======= */
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; color: var(--ink); }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); letter-spacing: 0.005em; }
+    h3 { font-size: clamp(1.25rem, 2.5vw, 1.7rem); font-weight: 500; }
+    p { margin-bottom: 1.15em; }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--oxblood); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--oxblood-dk); }
+    .sc { font-variant: small-caps; letter-spacing: 0.06em; font-size: 0.92em; }
+
+    /* ======= LAYOUT ======= */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+    .container-wide { max-width: var(--max-w-wide); margin: 0 auto; padding: 0 var(--pad); }
+    section { padding: clamp(4.5rem, 10vw, 7.5rem) 0; position: relative; }
+    .section-label { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--brass); margin-bottom: 0.9rem; display: block; }
+
+    /* Ornamental divider */
+    .ornament { display: flex; align-items: center; gap: 1.2rem; margin: 3rem auto; max-width: 280px; }
+    .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
+    .ornament span { font-family: var(--font-display); color: var(--hairline); font-size: 1rem; line-height: 1; }
+
+    /* ======= BUTTONS ======= */
+    .btn { display: inline-block; font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9em 2.2em; border: 1.5px solid currentColor; cursor: pointer; transition: all 0.22s ease; text-decoration: none; }
+    .btn-primary { background: var(--oxblood); color: var(--parchment); border-color: var(--oxblood); }
+    .btn-primary:hover { background: var(--oxblood-dk); border-color: var(--oxblood-dk); color: var(--parchment); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(107,34,38,0.2); }
+    .btn-outline { background: transparent; color: var(--oxblood); border-color: var(--oxblood); }
+    .btn-outline:hover { background: var(--oxblood); color: var(--parchment); }
+    .btn-ghost { background: transparent; color: var(--brass); border-color: var(--brass); }
+    .btn-ghost:hover { background: var(--brass); color: var(--parchment); }
+    .btn-light { background: transparent; color: rgba(244,239,230,0.8); border-color: rgba(201,190,168,0.35); }
+    .btn-light:hover { background: rgba(244,239,230,0.1); color: var(--parchment); border-color: rgba(244,239,230,0.5); }
+
+    /* ======= NAV ======= */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.1rem var(--pad); display: flex; align-items: center; justify-content: space-between; transition: background 0.4s, box-shadow 0.4s, padding 0.4s; }
+    nav.scrolled { background: rgba(244,239,230,0.96); box-shadow: 0 1px 0 var(--hairline); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding-top: 0.8rem; padding-bottom: 0.8rem; }
+    .nav-wordmark { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--ink); letter-spacing: 0.03em; text-decoration: none; }
+    .nav-wordmark em { color: var(--oxblood); font-style: normal; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+    .nav-links a { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.2s; position: relative; font-weight: 500; }
+    .nav-links a:hover { color: var(--oxblood); }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--oxblood); transform: scaleX(0); transition: transform 0.25s ease; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.5em 1.3em; background: var(--oxblood); color: var(--parchment) !important; border: none; transition: background 0.22s; }
+    .nav-cta::after { display: none; }
+    .nav-cta:hover { background: var(--oxblood-dk); color: var(--parchment) !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 102; position: relative; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s ease; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; right: 0; background: rgba(244,239,230,0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--hairline); box-shadow: 0 8px 24px rgba(26,26,26,0.15); padding: 1.5rem 2rem; gap: 1.2rem; z-index: 101; min-width: 220px; align-items: flex-start; }
+      .nav-links.open a { font-size: 0.85rem; letter-spacing: 0.16em; }
+      .nav-links.open a::after { display: none; }
+      .nav-links.open .nav-cta { width: 100%; text-align: center; }
+    }
+
+    /* ======= HERO ======= */
+    #hero { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 7rem var(--pad) 4rem; position: sticky; top: 0; z-index: 100; overflow: hidden; background: radial-gradient(ellipse 80% 60% at 50% 40%, var(--cream) 0%, var(--parchment) 100%); will-change: transform; }
+    .hero-slide-wrapper { position: absolute; top: 0; left: 0; right: 0; height: 200vh; z-index: 100; }
+    .page-content { position: relative; background: var(--parchment); z-index: 50; margin-top: 100vh; }
+    .page-content.frozen { position: fixed; top: 0; left: 0; right: 0; margin-top: 0; }
+
+    #hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--hairline-lt) 1px, transparent 1px), linear-gradient(90deg, var(--hairline-lt) 1px, transparent 1px); background-size: 44px 44px; opacity: 0.25; mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%); pointer-events: none; }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 720px; }
+    .hero-eyebrow { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--brass); margin-bottom: 2.2rem; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+    .hero-title { font-family: var(--font-display); font-size: clamp(3rem, 8.5vw, 6.5rem); font-weight: 600; line-height: 1.02; color: var(--ink); margin-bottom: 0.25em; letter-spacing: -0.015em; opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards; }
+    .hero-title em { font-style: italic; font-weight: 500; color: var(--oxblood); }
+    .hero-sub { font-family: var(--font-display); font-size: clamp(0.95rem, 2.3vw, 1.3rem); font-weight: 400; letter-spacing: 0.06em; color: var(--ink-faint); margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards; }
+
+    .hero-scripture { max-width: 520px; margin: 0 auto 3.2rem; padding: 2rem 2rem; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); position: relative; opacity: 0; animation: fadeUp 1s ease 0.85s forwards; }
+    .hero-scripture::before { content: '\2720'; position: absolute; top: -0.65em; left: 50%; transform: translateX(-50%); background: var(--parchment); padding: 0 0.8em; color: var(--hairline); font-size: 0.9rem; }
+    .hero-scripture p { font-family: var(--font-display); font-size: clamp(1.1rem, 2.2vw, 1.42rem); font-style: italic; font-weight: 400; line-height: 1.55; color: var(--ink-soft); margin: 0 0 0.5rem; }
+    .hero-scripture cite { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); font-style: normal; }
+
+    .hero-cta { opacity: 0; animation: fadeUp 0.9s ease 1.05s forwards; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ======= VISIT ======= */
+    #visit { background: var(--ink); color: var(--parchment); position: relative; }
+    #visit::before { content: ''; position: absolute; inset: 0; opacity: 0.025; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E"); pointer-events: none; }
+    #visit .section-label { color: var(--brass-light); }
+    #visit h2 { color: var(--parchment); margin-bottom: 0.3em; }
+
+    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; position: relative; }
+    .visit-grid::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(201,190,168,0.15); }
+    @media (max-width: 720px) { .visit-grid { grid-template-columns: 1fr; gap: 2.5rem; } .visit-grid::before { display: none; } }
+
+    .visit-times table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .visit-times th { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); text-align: left; padding-bottom: 0.7rem; border-bottom: 1px solid rgba(201,190,168,0.2); }
+    .visit-times td { font-family: var(--font-display); font-size: 1rem; padding: 0.8rem 0; border-bottom: 1px solid rgba(201,190,168,0.08); color: rgba(244,239,230,0.8); }
+    .visit-times td:first-child { font-weight: 600; color: var(--parchment); padding-right: 1.5rem; white-space: nowrap; }
+
+    .visit-location { padding-left: 3rem; }
+    @media (max-width: 720px) { .visit-location { padding-left: 0; padding-top: 2.5rem; border-top: 1px solid rgba(201,190,168,0.15); } }
+    .visit-location h3 { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); margin-bottom: 1rem; font-weight: 400; }
+    .loc-name { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 600; color: var(--parchment); margin-bottom: 0.15em; line-height: 1.2; }
+    .loc-sub { font-family: var(--font-display); font-size: 1rem; font-style: italic; color: rgba(244,239,230,0.5); margin-bottom: 1.2rem; }
+    .loc-addr { font-size: 0.88rem; line-height: 1.65; color: rgba(244,239,230,0.65); margin-bottom: 1rem; }
+    .loc-note { font-size: 0.82rem; font-style: italic; color: rgba(244,239,230,0.4); margin-bottom: 1.5rem; line-height: 1.6; }
+    .loc-phone { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 1.05rem; color: var(--parchment); text-decoration: none; margin-bottom: 1.5rem; transition: color 0.2s; }
+    .loc-phone:hover { color: var(--brass-light); }
+
+    /* ======= GOSPEL STATEMENT ======= */
+    #who-we-are { padding-bottom: clamp(3rem,7vw,5rem); }
+    .gospel-statement { font-family: var(--font-display); font-size: clamp(1.08rem, 2vw, 1.35rem); line-height: 1.95; color: var(--ink-soft); font-weight: 400; max-width: var(--max-w); margin: 2.5rem auto 0; padding: 2.8rem 3rem; border-left: 3px solid var(--oxblood); background: linear-gradient(115deg, var(--oxblood-glow) 0%, transparent 50%); position: relative; quotes: none; }
+    @media (max-width: 600px) { .gospel-statement { padding: 2rem 1.5rem; } }
+    .gospel-statement::first-letter { font-family: var(--font-display); font-size: 5em; font-weight: 700; line-height: 0.8; float: left; margin-right: 0.05em; margin-top: 0.08em; color: var(--oxblood); }
+    .gospel-attr { display: block; text-align: right; font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); margin-top: 1.5rem; font-style: normal; }
+    .gospel-sub-note { text-align: center; margin-top: 2.5rem; font-family: var(--font-display); font-size: 0.95rem; color: var(--ink-faint); font-style: italic; }
+
+    /* ======= THE GOSPEL ESSAY ======= */
+    #the-gospel { background: var(--parchment-dk); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+    .gospel-feature { display: grid; grid-template-columns: 1fr 2.2fr; gap: 5rem; align-items: start; }
+    @media (max-width: 720px) { .gospel-feature { grid-template-columns: 1fr; gap: 2rem; } }
+    .gospel-aside { padding-top: 0.3rem; }
+    .gospel-title-big { font-family: var(--font-display); font-size: clamp(2.5rem, 5.5vw, 4.2rem); font-weight: 600; line-height: 1.05; color: var(--ink); margin-bottom: 1.3rem; }
+    .gospel-title-big em { font-style: italic; color: var(--oxblood); }
+    .gospel-aside p { font-family: var(--font-display); font-size: 0.95rem; color: var(--ink-faint); line-height: 1.7; }
+    .essay-body h3 { font-family: var(--font-display); font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 600; color: var(--ink); margin-top: 2.5rem; margin-bottom: 0.8rem; }
+    .essay-body h3:first-child { margin-top: 0; }
+    .essay-body p { font-family: var(--font-display); font-size: clamp(0.98rem, 1.7vw, 1.12rem); line-height: 1.85; color: var(--ink-soft); margin-bottom: 1.1em; }
+    .essay-body blockquote { border-left: 2px solid var(--oxblood); padding: 0.6rem 0 0.6rem 1.5rem; margin: 1.5rem 0; font-style: italic; color: var(--ink-faint); }
+    .essay-body .scripture-block { margin: 2.5rem 0 2rem; padding: 1.8rem 2rem; border: 1px solid var(--hairline); background: var(--white-warm); text-align: center; }
+    .essay-body .scripture-block p { font-style: italic; font-size: 1.08rem; color: var(--ink-soft); margin-bottom: 0.5rem; }
+    .essay-body .scripture-block cite { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); font-style: normal; }
+    .essay-preview { position: relative; }
+    .essay-hidden { display: none; }
+    .essay-hidden.open { display: block; }
+    .essay-toggle { font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass); background: none; border: none; cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s; margin-top: 1rem; }
+    .essay-toggle:hover { color: var(--oxblood); }
+    .essay-toggle .arrow { display: inline-block; transition: transform 0.3s ease; }
+    .essay-toggle.open .arrow { transform: rotate(180deg); }
+
+    /* ======= BELIEFS ======= */
+    .beliefs-intro { font-family: var(--font-display); font-size: clamp(1.02rem, 1.8vw, 1.2rem); line-height: 1.85; color: var(--ink-soft); max-width: 620px; margin-bottom: 3rem; }
+    .confession-card { border: 1px solid var(--hairline); padding: 2.5rem 2.8rem; background: var(--white-warm); max-width: 660px; position: relative; margin-bottom: 2rem; }
+    @media (max-width: 600px) { .confession-card { padding: 2rem 1.5rem; } }
+    .confession-card::after { content: '1689'; position: absolute; top: 0; right: 2rem; background: var(--oxblood); color: var(--parchment); font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.2em; padding: 0.35em 0.9em; font-weight: 600; }
+    .confession-card h3 { margin-bottom: 0.8rem; }
+    .confession-card p { font-family: var(--font-display); font-size: 1rem; line-height: 1.8; color: var(--ink-soft); margin-bottom: 1rem; }
+    .beliefs-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+    .pillar { padding: 1.6rem; border: 1px solid var(--hairline); transition: border-color 0.25s, box-shadow 0.25s; }
+    .pillar:hover { border-color: var(--oxblood); box-shadow: 0 2px 12px var(--oxblood-glow); }
+    .pillar-label { font-family: var(--font-display); font-size: 0.63rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--brass); margin-bottom: 0.5rem; display: block; }
+    .pillar h4 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .pillar p { font-size: 0.86rem; line-height: 1.65; color: var(--ink-soft); margin: 0; }
+
+    /* ======= LEADERSHIP ======= */
+    #leadership { background: var(--parchment-dk); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+    .pastors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+    @media (max-width: 680px) { .pastors-grid { grid-template-columns: 1fr; gap: 3rem; } }
+    .pastor-photo-placeholder { width: 130px; height: 130px; margin-bottom: 1.5rem; border: 1.5px solid var(--hairline); display: flex; align-items: center; justify-content: center; background: rgba(201,190,168,0.12); }
+    .pastor-name { font-family: var(--font-display); font-size: 1.65rem; font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; }
+    .pastor-role { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); margin-bottom: 1.2rem; }
+    .pastor-bio { font-family: var(--font-display); font-size: 1.02rem; line-height: 1.82; color: var(--ink-soft); }
+
+    /* ======= SERMONS ======= */
+    .sermons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+    @media (max-width: 680px) { .sermons-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .res-block h3 { font-size: 1.45rem; margin-bottom: 0.6rem; }
+    .res-block p { font-family: var(--font-display); font-size: 0.95rem; line-height: 1.75; color: var(--ink-soft); margin-bottom: 1.3rem; }
+    .res-links { display: flex; flex-direction: column; gap: 0; }
+    .res-link { display: flex; align-items: center; gap: 0.7rem; font-family: var(--font-display); font-size: 0.92rem; color: var(--ink); text-decoration: none; padding: 0.7rem 0; border-bottom: 1px solid var(--hairline-lt); transition: color 0.2s, padding-left 0.25s; }
+    .res-link:hover { color: var(--oxblood); padding-left: 0.3rem; }
+    .res-link::before { content: '\2192'; color: var(--brass); font-size: 0.82rem; }
+
+    /* ======= FOOTER ======= */
+    footer { background: var(--ink); color: rgba(244,239,230,0.65); padding: 4rem 0 2.5rem; }
+    .ft-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(201,190,168,0.12); margin-bottom: 1.8rem; }
+    @media (max-width: 720px) { .ft-top { grid-template-columns: 1fr; gap: 2rem; } }
+    .ft-brand .nav-wordmark { color: var(--parchment); font-size: 1.1rem; display: block; margin-bottom: 0.7rem; }
+    .ft-brand p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 1rem; }
+    .ft-section h4 { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); margin-bottom: 1rem; }
+    .ft-section ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .ft-section li { font-family: var(--font-display); font-size: 0.88rem; }
+    .ft-section a { color: rgba(244,239,230,0.55); text-decoration: none; transition: color 0.2s; }
+    .ft-section a:hover { color: var(--parchment); }
+    .ft-section address { font-style: normal; font-family: var(--font-display); font-size: 0.88rem; line-height: 1.8; }
+    .ft-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .ft-bottom p { font-size: 0.75rem; margin: 0; color: rgba(244,239,230,0.28); }
+    .ft-bottom a { color: rgba(244,239,230,0.4); font-size: 0.75rem; }
+    .ft-bottom a:hover { color: var(--parchment); }
+
+    /* ======= ANIMATIONS ======= */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .anim { opacity: 0; transform: translateY(26px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .anim.vis { opacity: 1; transform: translateY(0); }
+    .anim.d1 { transition-delay: 0.1s; }
+    .anim.d2 { transition-delay: 0.22s; }
+    .anim.d3 { transition-delay: 0.36s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav" aria-label="Main navigation">
+    <a href="#hero" class="nav-wordmark">Christ <em>Fellowship</em></a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#who-we-are">Gospel</a></li>
+      <li><a href="#beliefs">Beliefs</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#sermons">Sermons</a></li>
+      <li><a href="#visit" class="nav-cta">Plan a Visit</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ SECTION 1 — HERO ============ -->
+  <div class="hero-slide-wrapper">
+    <section id="hero" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Alexandria, Louisiana</p>
+      <h1 class="hero-title" id="hero-heading">Christ<br><em>Fellowship</em><br>Church</h1>
+      <p class="hero-sub">A confessional Baptist church in the heart of Central Louisiana</p>
+
+      <div class="hero-scripture" role="figure" aria-label="Opening Scripture">
+        <p>&ldquo;But we preach Christ crucified, a stumbling block to Jews and folly to Gentiles, but to those who are called, both Jews and Greeks, Christ the power of God and the wisdom of God.&rdquo;</p>
+        <cite>1 Corinthians 1:23&ndash;24</cite>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#visit" class="btn btn-primary">Plan Your Visit</a>
+        <a href="#the-gospel" class="btn btn-outline">Read the Gospel</a>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <div class="page-content">
+
+  <!-- ============ SECTION 2 — PLAN YOUR VISIT ============ -->
+  <section id="visit" aria-labelledby="visit-heading">
+    <div class="container-wide">
+      <div class="anim">
+        <span class="section-label">We&rsquo;d Love to See You</span>
+        <h2 id="visit-heading">Plan Your Visit</h2>
+      </div>
+
+      <div class="visit-grid anim d2">
+        <div class="visit-times">
+          <table aria-label="Service schedule">
+            <thead><tr><th>Gathering</th><th>Day &amp; Time</th></tr></thead>
+            <tbody>
+              <tr><td>Sunday Prayer</td><td>9:30 &ndash; 10:00 <span class="sc">am</span></td></tr>
+              <tr><td>Sunday Service</td><td>10:30 <span class="sc">am</span> &ndash; 12:00 <span class="sc">pm</span></td></tr>
+              <tr><td>Wednesday Service</td><td>6:30 &ndash; 7:30 <span class="sc">pm</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="visit-location">
+          <h3>Where We Meet</h3>
+          <p class="loc-name">Lake Charles Room</p>
+          <p class="loc-sub">Holiday Inn Downtown Alexandria</p>
+          <p class="loc-addr">701 4th St, Alexandria, LA 71301</p>
+          <p class="loc-note">We currently meet in the Lake Charles room at the Holiday Inn Downtown Alexandria. When you arrive, follow signs for Christ Fellowship &mdash; we&rsquo;re glad you&rsquo;re here.</p>
+          <a href="tel:+13184194497" class="loc-phone" aria-label="Call (318) 419-4497">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+            (318) 419-4497
+          </a><br>
+          <a href="https://maps.google.com/?q=701+4th+St+Alexandria+LA+71301" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="margin-top:0.8rem;">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3 — GOSPEL STATEMENT ============ -->
+  <section id="who-we-are" aria-labelledby="whoweare-heading">
+    <div class="container">
+      <div class="anim">
+        <span class="section-label">The Christ Fellowship Statement of the Gospel</span>
+        <h2 id="whoweare-heading">Who We Are</h2>
+      </div>
+
+      <blockquote class="gospel-statement anim d2">
+        We believe that Jesus is the Christ, the Son of the Living God, that God raised Him from the dead and He is Lord, and therefore we have nowhere else to go, for He has the words of eternal life. We believe that He is the promised Son who crushed the serpent&rsquo;s head, that He was born of the Virgin Mary by the Power of the Holy Spirit, He therefore is truly Man and yet truly God, nevertheless He is but One Person, the Lord Jesus Christ, who by His incarnation became the New Adam who obeyed the Law of God on our behalf, all the way to the point of death, even the death of the cross, that He was buried, but according to the Scriptures and His own righteousness, He was not allowed to suffer decay but was raised up on the third day by the power of God for our justification, and after appearing to many witnesses He ascended into heaven where He sat down at the right hand of the Majesty on high, where having finished His work He ever lives to intercede for us, and is able to save to the uttermost any who come to God through Him, if they come by faith alone in Him alone apart from works of the Law, and that from this position of glory He rules the world, that He will return to judge those who do not obey the gospel and to save those who do, and that having been raised from the dead in their glorious bodies, fully redeemed from the curse of sin, the law, and the grave, they shall ever be with the Lord, shall ever go on increasing in the knowledge of His grace, and shall ever go on glorifying Him and enjoying Him, unto the ages of the ages, Amen.
+        <cite class="gospel-attr">&mdash; Christ Fellowship Church of Cenla</cite>
+      </blockquote>
+
+      <p class="gospel-sub-note anim d3">For a fuller description of our beliefs, <a href="#beliefs">see what we believe</a> below.</p>
+    </div>
+  </section>
+
+  <div class="ornament"><span>&#10016;</span></div>
+
+  <!-- ============ SECTION 4 — THE GOSPEL (TWO MEN, ALL MEN) ============ -->
+  <section id="the-gospel" aria-labelledby="gospel-essay-heading">
+    <div class="container-wide">
+      <div class="gospel-feature">
+
+        <div class="gospel-aside anim">
+          <span class="section-label">The Gospel of Jesus Christ</span>
+          <h2 class="gospel-title-big" id="gospel-essay-heading">Two Men,<br><em>All Men</em></h2>
+          <p>At some point in your life, you&rsquo;ve likely wondered: Why there is so much suffering and injustice in the world &mdash; and whether God has a plan to end it?</p>
+          <p style="margin-top:0.8rem;">The Bible answers both questions through two men, and what it teaches is: <strong>Adam brought it all, but Christ is ending it all.</strong></p>
+        </div>
+
+        <div class="essay-body anim d2">
+
+          <h3>Two Men</h3>
+
+          <p>All historians have a problem. What do they include and what do they exclude from their accounts of world history? There are just too many facts, so they must decide what&rsquo;s significant and what&rsquo;s not. For example, it would be historical for a man to spend his whole lifetime researching the average number of belt loops ever used on pants. But that would hardly be significant! Well, when we come to the Bible we find two men are significant in world history. We find the apostle Paul looking all the way back to the beginning and referring to Adam as &ldquo;the first man&rdquo; (1 Corinthians 15:47).</p>
+
+          <p>That&rsquo;s obvious to us because he is the first man to ever live. But then he shocks us. From there he scans across thousands of years, the lives of men like Alexander the Great and Aristotle are overlooked, and he fixes his eye on Jesus and calls Him &ldquo;the second man.&rdquo; This raises an obvious question. If Jesus is not the second man to ever live why did Paul give Him that name?</p>
+
+          <blockquote><p>Richard Gaffin writes: <em>As Paul is looking at things in this passage, no one between them &lsquo;counts.&rsquo;</em> (p. 47, By Faith, Not By Sight)</p></blockquote>
+
+          <blockquote><p>Douglas Moo explains: <em>All people, Paul teaches, stand in relationship to one of two men, whose actions determine the eternal destiny of all who belong to them. Either one &lsquo;belongs to&rsquo; Adam and is under sentence of death because of his sin&hellip; or one belongs to Christ and is assured of eternal life because of his &lsquo;righteous&rsquo; act&hellip; The actions of Adam and Christ, then, are similar in having &lsquo;epochal&rsquo; significance.</em> (Romans, p.314&ndash;315)</p></blockquote>
+
+          <p>We say certain movies have &lsquo;epic battle scenes&rsquo; by which we mean they have far reaching effects in the world. So Moo is saying these two men are &ldquo;epic&rdquo; due to the far reaching effects they have upon the world.</p>
+
+          <p>Simply and yet staggeringly put, these two men have &lsquo;epochal significance&rsquo; because they have &lsquo;everyone significance&rsquo;! They are the representatives of two human races. One represents the old humanity of the old fallen creation. The other represents the new humanity of the new redeemed creation. And just as the actions of a representative in our country are counted to those whom he represents, even so the actions of these two representatives are counted to those whom they represent. The actions of the representative are counted as the actions of those represented. This is why they &lsquo;count&rsquo; so much! So we could say these two men &lsquo;count&rsquo; for all men.</p>
+
+          <p>Therefore the only question that remains is to ask &ldquo;what exactly has been counted to all men as a result of the actions of these two men?&rdquo;</p>
+
+          <div class="essay-preview">
+            <button class="essay-toggle" id="essay-btn" aria-expanded="false" aria-controls="essay-rest">
+              Continue Reading &mdash; All Men <span class="arrow">&#9660;</span>
+            </button>
+
+            <div class="essay-hidden" id="essay-rest" aria-hidden="true">
+
+              <h3>All Men</h3>
+
+              <p>Well, in Romans 5:18&ndash;19 we find the answer&hellip; <strong>First,</strong> in 5:18&ndash;19 we see that all men are either counted condemned or justified. 5:18 speaks of either &lsquo;condemnation to all men&rsquo; or &lsquo;justification of life to all men.&rsquo; And 5:19 speaks of men as being either &lsquo;appointed sinners&rsquo; or &lsquo;appointed righteous.&rsquo; This one simple truth shatters religion! Every person you know is either 100% condemned as a sinner or 100% justified as righteous in the sight of God. Nobody is &ldquo;pretty good&rdquo;, or able to say &ldquo;well nobody&rsquo;s perfect.&rdquo; Nor is anyone in any religious process of becoming good enough. Everyone on this planet right now today is in a condemned or justified state. This is shocking! And it&rsquo;s because the word &lsquo;justify&rsquo; means to declare right not to make right. It is a legal act not a surgical act. It happens outside of you not inside of you. It&rsquo;s concerned with what God thinks about you not what you think about you. We know this because it&rsquo;s contrasted here with condemnation.</p>
+
+              <p>For instance, when a judge condemns a man, does he make that man wicked? Absolutely not, he declares him to be wicked. In the same way then, when God justifies someone, He is not making them righteous, but declaring them to be righteous. In fact, justification is for &lsquo;the ungodly&rsquo; (Romans 4:5)! So this means that in God&rsquo;s sight all men are either declared to be righteous or sinful. There is no &lsquo;in between.&rsquo; You are either fully accepted or rejected.</p>
+
+              <p><strong>Second,</strong> we also see in 5:18&ndash;19 why all men are either counted condemned or justified, and it&rsquo;s because all men are either connected to Adam&rsquo;s transgression or to Christ&rsquo;s righteousness. If the first truth shattered religion, this one grinds it to powder!</p>
+
+              <p>According to the Bible a man&rsquo;s transgression leads to death (Genesis 2:17, Ezekiel 18:4, Romans 6:23) and a man&rsquo;s righteousness leads to life (Luke 10:25&ndash;28, Romans 7:10, Romans 10:5). So if you are righteous you will live, but if you are sinful you will die. But notice what this verse does not say. It does not say that all men are either condemned or justified &lsquo;through their own&rsquo; transgressions or righteous acts. Rather, it specifically says &lsquo;through one transgression&rsquo; and &lsquo;through the one man&rsquo;s disobedience condemnation is counted to all men and the many are appointed sinners.&rsquo;</p>
+
+              <p>And on the other side &lsquo;through one act of righteousness&rsquo; and &lsquo;through the obedience of the One&rsquo; justification is counted to all men and the many are appointed righteous! What this means is that your eternal destiny of death or life is not determined by your own sins or righteous acts! It is determined by the actions of another! So, you are either &ldquo;in Adam&rdquo; and you will get death, or you are &ldquo;in Christ&rdquo; and you will get life (1 Corinthians 15:22). This is the pride humbling, despair lifting gospel of Jesus Christ!</p>
+
+              <p>Now what is the implication of such good news? <strong>There&rsquo;s no boasting.</strong></p>
+
+              <blockquote><p>Martyn Lloyd-Jones tells us: <em>Look at yourself in Adam; though you had done nothing you were declared a sinner. Look at yourself in Christ; and see that, though you have done nothing, you are declared to be righteous. That is the parallel. We must get rid of all thoughts of our actions. There is no boasting. We do nothing; all we are and have results from the obedience of the One &mdash; our Lord.</em> (p.274, Romans, vol.4)</p></blockquote>
+
+              <p>That&rsquo;s what I want you to do, look at yourself in all this to see where you are. Sometimes in a mall you&rsquo;ll see the map that says &ldquo;you are here.&rdquo; Well where are you in all this? We have seen that there are these two men, and their actions determine the destinies of all men. Are you in Adam or in Christ? Are you justified or condemned? Are you believing, or are you working? Because the gospel comes to you as a message of salvation accomplished not a message for you to accomplish salvation. It comes proclaiming a deed already finished and done, that you might be finished and done with deeds. It announces the absolute irrelevance of your actions. It not only says that your deeds do not justify you, they don&rsquo;t even condemn you!</p>
+
+              <p>As a matter of fact, all that was needed to condemn you or justify you occurred before you were ever born! You could even say it was finished before some religions ever started! Is this not what Jesus cried out upon the cross? &ldquo;Jesus, knowing that all things had already been finished&hellip; said &lsquo;It is finished!&rsquo;&rdquo; (John 19:28&ndash;30) So don&rsquo;t be hard of hearing, but listen to the Savior Himself! Was His life not perfect enough that you must add your goodness to it? Was His death not perfect enough that you must add your groanings to it? God Himself told us it was enough when He raised Him from the dead! He was raised for our justification, to prove that acceptance with God is found in Him (Romans 4:25). The resurrection was God&rsquo;s &ldquo;Amen&rdquo; to the Lord&rsquo;s words &ldquo;it is finished.&rdquo; Genesis says God rested from His works on the seventh day since creation was finished, and the gospel calls you to rest from your works in the day of Christ because redemption is finished!</p>
+
+              <p>Do you want assurance of salvation? You will never find it in yourself! A ship being tossed to and fro must toss its anchor outside of itself to find security, and so you must toss the anchor of your confidence outside of yourself into Christ alone. If not, you will forever be tossed about by fear and doubt. Why wait any longer? Believe the good news of the gospel! Get rid of all thoughts of your actions and get full of thoughts about His actions! Then you will get full of assurance! &ldquo;Whoever believes in Him will not be disappointed&rdquo; (Romans 10:11)</p>
+
+              <div class="scripture-block">
+                <p>&ldquo;So then as through one transgression there resulted condemnation to all men, even so through one act of righteousness there resulted justification of life to all men. For as through the one man&rsquo;s disobedience the many were appointed sinners, even so through the obedience of the One the many will be appointed righteous.&rdquo;</p>
+                <cite>Romans 5:18&ndash;19</cite>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5 — WHAT WE BELIEVE ============ -->
+  <section id="beliefs" aria-labelledby="beliefs-heading">
+    <div class="container">
+      <div class="anim">
+        <span class="section-label">What We Believe</span>
+        <h2 id="beliefs-heading">The Reformed Faith &amp; the <span class="sc">1689</span> Confession</h2>
+      </div>
+
+      <p class="beliefs-intro anim d1">
+        Christ Fellowship Church holds to the Reformed faith as expressed in the <strong>1689 London Baptist Confession of Faith</strong>. We are a confessional, expository-preaching congregation committed to the historic doctrines of grace and the Baptist heritage of Central Louisiana.
+      </p>
+
+      <div class="confession-card anim d2">
+        <h3>The 1689 London Baptist Confession</h3>
+        <p>The Second London Baptist Confession of 1689 is our doctrinal standard &mdash; a thorough and faithful summary of what Scripture teaches regarding God, man, salvation, the church, and the last things. We hold it not as equal to Scripture, but as a faithful expression of what the Bible teaches, and as a bond of unity among our members.</p>
+        <a href="https://founders.org/1689-confession/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem;">View the 1689 Confession</a>
+      </div>
+
+      <div class="beliefs-pillars anim d3">
+        <div class="pillar">
+          <span class="pillar-label">Scripture</span>
+          <h4>The Word of God</h4>
+          <p>The Bible alone is the infallible rule of faith and practice &mdash; the only sufficient, certain, and infallible rule.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-label">Salvation</span>
+          <h4>Grace Alone</h4>
+          <p>Salvation is entirely by God&rsquo;s grace, through faith alone in Christ alone &mdash; not by any merit or work of man.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-label">Worship</span>
+          <h4>Expository Preaching</h4>
+          <p>We preach through books of the Bible, letting Scripture set the agenda, so that God&rsquo;s people are fed the whole counsel of God.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-label">The Church</span>
+          <h4>Believers&rsquo; Baptism</h4>
+          <p>We baptize those who profess faith in Christ &mdash; baptism is the public confession of one who has already believed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6 — LEADERSHIP ============ -->
+  <section id="leadership" aria-labelledby="leadership-heading">
+    <div class="container-wide">
+      <div class="anim">
+        <span class="section-label">Our Pastors</span>
+        <h2 id="leadership-heading">Leadership</h2>
+      </div>
+
+      <div class="pastors-grid">
+        <div class="anim d1">
+          <div class="pastor-photo-placeholder" aria-hidden="true">
+            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+          </div>
+          <h3 class="pastor-name">Jeffrey Mercer</h3>
+          <p class="pastor-role">Pastor</p>
+          <p class="pastor-bio">Jeffrey Mercer was called to the gospel ministry in 2006, after which he entered into seminary. Then in 2010 he was called to pastor Christ Fellowship of Cenla, where he has ministered ever since. He is husband to Challie, and father to Anabelle and Abram. Jeffrey&rsquo;s favorite verses are the verses on which he&rsquo;s currently preaching.</p>
+        </div>
+
+        <div class="anim d2">
+          <div class="pastor-photo-placeholder" aria-hidden="true">
+            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+          </div>
+          <h3 class="pastor-name">Justin Morgan</h3>
+          <p class="pastor-role">Pastor</p>
+          <p class="pastor-bio">Justin Morgan began attending Christ Fellowship in 2011 and was called to the gospel ministry in 2024. He is currently enrolled at Grace Bible Theological Seminary in the Certificate of Ministry Program. He is husband to Cacy, and father to Liam, Truett, Conrad, and Elliot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 7 — SERMONS & RESOURCES ============ -->
+  <section id="sermons" aria-labelledby="sermons-heading">
+    <div class="container-wide">
+      <div class="anim">
+        <span class="section-label">Hear the Word Preached</span>
+        <h2 id="sermons-heading">Sermons &amp; Resources</h2>
+      </div>
+
+      <div class="sermons-grid">
+        <div class="res-block anim d1">
+          <h3>Listen to Sermons</h3>
+          <p>Our sermons are available through SermonAudio. We preach expositionally through books of the Bible, letting Scripture set the agenda for the life of our church.</p>
+          <div class="res-links">
+            <a href="https://www.sermonaudio.com/source_detail.asp?sourceid=christfelowship" target="_blank" rel="noopener noreferrer" class="res-link">SermonAudio</a>
+            <a href="https://www.facebook.com/cfcenla" target="_blank" rel="noopener noreferrer" class="res-link">Facebook</a>
+          </div>
+        </div>
+
+        <div class="res-block anim d2">
+          <h3>Give</h3>
+          <p>If you would like to support the ministry of Christ Fellowship Church, you may give online or in person during our Sunday gathering.</p>
+          <div class="res-links">
+            <a href="https://cfcenla.com/give" target="_blank" rel="noopener noreferrer" class="res-link">Give Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- end .page-content -->
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container-wide">
+      <div class="ft-top">
+        <div class="ft-brand">
+          <a href="#hero" class="nav-wordmark">Christ <em>Fellowship</em></a>
+          <p>A confessional Reformed Baptist congregation in Alexandria, Louisiana, devoted to the fellowship of the gospel and the Reformed faith as expressed in the 1689 London Baptist Confession.</p>
+          <a href="https://www.facebook.com/cfcenla" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="font-size:0.65rem; padding:0.5em 1.2em;">Follow on Facebook</a>
+        </div>
+
+        <div class="ft-section">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#visit">Plan a Visit</a></li>
+            <li><a href="#who-we-are">The Gospel</a></li>
+            <li><a href="#beliefs">What We Believe</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#sermons">Sermons</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-section">
+          <h4>Contact</h4>
+          <address>
+            701 4th St<br>
+            Alexandria, LA 71301<br><br>
+            <a href="tel:+13184194497">(318) 419-4497</a>
+          </address>
+        </div>
+      </div>
+
+      <div class="ft-bottom">
+        <p>&copy; 2025 Christ Fellowship Church of Cenla. All rights reserved.</p>
+        <a href="https://founders.org/1689-confession/" target="_blank" rel="noopener noreferrer">1689 Confession</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Nav scroll */
+    const nav = document.getElementById('main-nav');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          nav.classList.toggle('scrolled', window.scrollY > 60);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    /* Hamburger */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* Scroll reveal */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); observer.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.15 });
+    document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+    /* Essay toggle */
+    const essayBtn = document.getElementById('essay-btn');
+    const essayRest = document.getElementById('essay-rest');
+    essayBtn.addEventListener('click', () => {
+      const open = essayRest.classList.toggle('open');
+      essayBtn.classList.toggle('open');
+      essayBtn.setAttribute('aria-expanded', open);
+      essayRest.setAttribute('aria-hidden', !open);
+      if (open) essayBtn.innerHTML = 'Collapse <span class="arrow">&#9660;</span>';
+      else essayBtn.innerHTML = 'Continue Reading &mdash; All Men <span class="arrow">&#9660;</span>';
+    });
+  </script>
+
+</body>
 </html>
