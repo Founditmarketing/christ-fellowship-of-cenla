@@ -113,53 +113,207 @@
     }
 
     /* ======= TYPOGRAPHY ======= */
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; color: var(--ink); }
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.12;
+      color: var(--ink);
+    }
     h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); letter-spacing: 0.005em; }
     h3 { font-size: clamp(1.25rem, 2.5vw, 1.7rem); font-weight: 500; }
+
     p { margin-bottom: 1.15em; }
     p:last-child { margin-bottom: 0; }
+
     a { color: var(--oxblood); text-decoration: none; transition: color 0.2s; }
     a:hover { color: var(--oxblood-dk); }
-    .sc { font-variant: small-caps; letter-spacing: 0.06em; font-size: 0.92em; }
+
+    .sc {
+      font-variant: small-caps;
+      letter-spacing: 0.06em;
+      font-size: 0.92em;
+    }
 
     /* ======= LAYOUT ======= */
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
     .container-wide { max-width: var(--max-w-wide); margin: 0 auto; padding: 0 var(--pad); }
     section { padding: clamp(4.5rem, 10vw, 7.5rem) 0; position: relative; }
-    .section-label { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--brass); margin-bottom: 0.9rem; display: block; }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 0.9rem;
+      display: block;
+    }
 
     /* Ornamental divider */
-    .ornament { display: flex; align-items: center; gap: 1.2rem; margin: 3rem auto; max-width: 280px; }
-    .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
-    .ornament span { font-family: var(--font-display); color: var(--hairline); font-size: 1rem; line-height: 1; }
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 3rem auto;
+      max-width: 280px;
+    }
+    .ornament::before, .ornament::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--hairline);
+    }
+    .ornament span {
+      font-family: var(--font-display);
+      color: var(--hairline);
+      font-size: 1rem;
+      line-height: 1;
+    }
 
     /* ======= BUTTONS ======= */
-    .btn { display: inline-block; font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.9em 2.2em; border: 1.5px solid currentColor; cursor: pointer; transition: all 0.22s ease; text-decoration: none; }
-    .btn-primary { background: var(--oxblood); color: var(--parchment); border-color: var(--oxblood); }
-    .btn-primary:hover { background: var(--oxblood-dk); border-color: var(--oxblood-dk); color: var(--parchment); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(107,34,38,0.2); }
-    .btn-outline { background: transparent; color: var(--oxblood); border-color: var(--oxblood); }
-    .btn-outline:hover { background: var(--oxblood); color: var(--parchment); }
-    .btn-ghost { background: transparent; color: var(--brass); border-color: var(--brass); }
-    .btn-ghost:hover { background: var(--brass); color: var(--parchment); }
-    .btn-light { background: transparent; color: rgba(244,239,230,0.8); border-color: rgba(201,190,168,0.35); }
-    .btn-light:hover { background: rgba(244,239,230,0.1); color: var(--parchment); border-color: rgba(244,239,230,0.5); }
+    .btn {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.9em 2.2em;
+      border: 1.5px solid currentColor;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--oxblood);
+      color: var(--parchment);
+      border-color: var(--oxblood);
+    }
+    .btn-primary:hover {
+      background: var(--oxblood-dk);
+      border-color: var(--oxblood-dk);
+      color: var(--parchment);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(107,34,38,0.2);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--oxblood);
+      border-color: var(--oxblood);
+    }
+    .btn-outline:hover {
+      background: var(--oxblood);
+      color: var(--parchment);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--brass);
+      border-color: var(--brass);
+    }
+    .btn-ghost:hover {
+      background: var(--brass);
+      color: var(--parchment);
+    }
+    .btn-light {
+      background: transparent;
+      color: rgba(244,239,230,0.8);
+      border-color: rgba(201,190,168,0.35);
+    }
+    .btn-light:hover {
+      background: rgba(244,239,230,0.1);
+      color: var(--parchment);
+      border-color: rgba(244,239,230,0.5);
+    }
 
     /* ======= NAV ======= */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.1rem var(--pad); display: flex; align-items: center; justify-content: space-between; transition: background 0.4s, box-shadow 0.4s, padding 0.4s; }
-    nav.scrolled { background: rgba(244,239,230,0.96); box-shadow: 0 1px 0 var(--hairline); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding-top: 0.8rem; padding-bottom: 0.8rem; }
-    .nav-wordmark { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--ink); letter-spacing: 0.03em; text-decoration: none; }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.1rem var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(244,239,230,0.96);
+      box-shadow: 0 1px 0 var(--hairline);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+    }
+    .nav-wordmark {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
     .nav-wordmark em { color: var(--oxblood); font-style: normal; }
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
-    .nav-links a { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.2s; position: relative; font-weight: 500; }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+      font-weight: 500;
+    }
     .nav-links a:hover { color: var(--oxblood); }
-    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--oxblood); transform: scaleX(0); transition: transform 0.25s ease; }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--oxblood);
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
     .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-cta { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.5em 1.3em; background: var(--oxblood); color: var(--parchment) !important; border: none; transition: background 0.22s; }
+    .nav-cta {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.5em 1.3em;
+      background: var(--oxblood);
+      color: var(--parchment) !important;
+      border: none;
+      transition: background 0.22s;
+    }
     .nav-cta::after { display: none; }
     .nav-cta:hover { background: var(--oxblood-dk); color: var(--parchment) !important; }
 
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 102; position: relative; }
-    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s ease; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      z-index: 102;
+      position: relative;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: all 0.3s ease;
+    }
     .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
@@ -167,142 +321,675 @@
     @media (max-width: 800px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; right: 0; background: rgba(244,239,230,0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--hairline); box-shadow: 0 8px 24px rgba(26,26,26,0.15); padding: 1.5rem 2rem; gap: 1.2rem; z-index: 101; min-width: 220px; align-items: flex-start; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(244,239,230,0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--hairline);
+        box-shadow: 0 8px 24px rgba(26,26,26,0.15);
+        padding: 1.5rem 2rem;
+        gap: 1.2rem;
+        z-index: 101;
+        min-width: 220px;
+        align-items: flex-start;
+      }
       .nav-links.open a { font-size: 0.85rem; letter-spacing: 0.16em; }
       .nav-links.open a::after { display: none; }
       .nav-links.open .nav-cta { width: 100%; text-align: center; }
     }
 
     /* ======= HERO ======= */
-    #hero { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 7rem var(--pad) 4rem; position: sticky; top: 0; z-index: 100; overflow: hidden; background: radial-gradient(ellipse 80% 60% at 50% 40%, var(--cream) 0%, var(--parchment) 100%); will-change: transform; }
-    .hero-slide-wrapper { position: absolute; top: 0; left: 0; right: 0; height: 200vh; z-index: 100; }
-    .page-content { position: relative; background: var(--parchment); z-index: 50; margin-top: 100vh; }
-    .page-content.frozen { position: fixed; top: 0; left: 0; right: 0; margin-top: 0; }
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem var(--pad) 4rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, var(--cream) 0%, var(--parchment) 100%);
+      will-change: transform;
+    }
 
-    #hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(var(--hairline-lt) 1px, transparent 1px), linear-gradient(90deg, var(--hairline-lt) 1px, transparent 1px); background-size: 44px 44px; opacity: 0.25; mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%); pointer-events: none; }
+    /* Wrapper creates scroll distance for hero slide animation */
+    .hero-slide-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 200vh; /* 2x viewport = enough scroll for slide */
+      z-index: 100;
+    }
 
-    .hero-inner { position: relative; z-index: 1; max-width: 720px; }
-    .hero-eyebrow { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--brass); margin-bottom: 2.2rem; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
-    .hero-title { font-family: var(--font-display); font-size: clamp(3rem, 8.5vw, 6.5rem); font-weight: 600; line-height: 1.02; color: var(--ink); margin-bottom: 0.25em; letter-spacing: -0.015em; opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards; }
-    .hero-title em { font-style: italic; font-weight: 500; color: var(--oxblood); }
-    .hero-sub { font-family: var(--font-display); font-size: clamp(0.95rem, 2.3vw, 1.3rem); font-weight: 400; letter-spacing: 0.06em; color: var(--ink-faint); margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards; }
+    /* Container for all content after hero */
+    .page-content {
+      position: relative;
+      background: var(--parchment);
+      z-index: 50;
+      margin-top: 100vh; /* Start below viewport initially */
+    }
 
-    .hero-scripture { max-width: 520px; margin: 0 auto 3.2rem; padding: 2rem 2rem; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); position: relative; opacity: 0; animation: fadeUp 1s ease 0.85s forwards; }
-    .hero-scripture::before { content: '\2720'; position: absolute; top: -0.65em; left: 50%; transform: translateX(-50%); background: var(--parchment); padding: 0 0.8em; color: var(--hairline); font-size: 0.9rem; }
-    .hero-scripture p { font-family: var(--font-display); font-size: clamp(1.1rem, 2.2vw, 1.42rem); font-style: italic; font-weight: 400; line-height: 1.55; color: var(--ink-soft); margin: 0 0 0.5rem; }
-    .hero-scripture cite { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); font-style: normal; }
+    /* Freeze content in place during slide */
+    .page-content.frozen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+    }
 
-    .hero-cta { opacity: 0; animation: fadeUp 0.9s ease 1.05s forwards; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    /* Fine ruled grid */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--hairline-lt) 1px, transparent 1px),
+        linear-gradient(90deg, var(--hairline-lt) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.25;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 2.2rem;
+      opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8.5vw, 6.5rem);
+      font-weight: 600;
+      line-height: 1.02;
+      color: var(--ink);
+      margin-bottom: 0.25em;
+      letter-spacing: -0.015em;
+      opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--oxblood);
+    }
+    .hero-sub {
+      font-family: var(--font-display);
+      font-size: clamp(0.95rem, 2.3vw, 1.3rem);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--ink-faint);
+      margin-bottom: 3rem;
+      opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards;
+    }
+
+    .hero-scripture {
+      max-width: 520px;
+      margin: 0 auto 3.2rem;
+      padding: 2rem 2rem;
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      position: relative;
+      opacity: 0; animation: fadeUp 1s ease 0.85s forwards;
+    }
+    .hero-scripture::before {
+      content: '✠';
+      position: absolute;
+      top: -0.65em;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--parchment);
+      padding: 0 0.8em;
+      color: var(--hairline);
+      font-size: 0.9rem;
+    }
+    .hero-scripture p {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.2vw, 1.42rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0 0 0.5rem;
+    }
+    .hero-scripture cite {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass);
+      font-style: normal;
+    }
+
+    .hero-cta {
+      opacity: 0; animation: fadeUp 0.9s ease 1.05s forwards;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
     /* ======= VISIT ======= */
-    #visit { background: var(--ink); color: var(--parchment); position: relative; }
-    #visit::before { content: ''; position: absolute; inset: 0; opacity: 0.025; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E"); pointer-events: none; }
+    #visit {
+      background: var(--ink);
+      color: var(--parchment);
+      position: relative;
+    }
+    #visit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
     #visit .section-label { color: var(--brass-light); }
     #visit h2 { color: var(--parchment); margin-bottom: 0.3em; }
 
-    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; position: relative; }
-    .visit-grid::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(201,190,168,0.15); }
-    @media (max-width: 720px) { .visit-grid { grid-template-columns: 1fr; gap: 2.5rem; } .visit-grid::before { display: none; } }
+    .visit-intro {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: rgba(244,239,230,0.55);
+      font-style: italic;
+      max-width: 500px;
+      line-height: 1.7;
+    }
 
-    .visit-times table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    .visit-times th { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); text-align: left; padding-bottom: 0.7rem; border-bottom: 1px solid rgba(201,190,168,0.2); }
-    .visit-times td { font-family: var(--font-display); font-size: 1rem; padding: 0.8rem 0; border-bottom: 1px solid rgba(201,190,168,0.08); color: rgba(244,239,230,0.8); }
-    .visit-times td:first-child { font-weight: 600; color: var(--parchment); padding-right: 1.5rem; white-space: nowrap; }
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+    .visit-grid::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: rgba(201,190,168,0.15);
+    }
+    @media (max-width: 720px) {
+      .visit-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .visit-grid::before { display: none; }
+    }
+
+    .visit-times table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .visit-times th {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brass);
+      text-align: left;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid rgba(201,190,168,0.2);
+    }
+    .visit-times td {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(201,190,168,0.08);
+      color: rgba(244,239,230,0.8);
+    }
+    .visit-times td:first-child {
+      font-weight: 600;
+      color: var(--parchment);
+      padding-right: 1.5rem;
+      white-space: nowrap;
+    }
 
     .visit-location { padding-left: 3rem; }
-    @media (max-width: 720px) { .visit-location { padding-left: 0; padding-top: 2.5rem; border-top: 1px solid rgba(201,190,168,0.15); } }
-    .visit-location h3 { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); margin-bottom: 1rem; font-weight: 400; }
-    .loc-name { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 600; color: var(--parchment); margin-bottom: 0.15em; line-height: 1.2; }
-    .loc-sub { font-family: var(--font-display); font-size: 1rem; font-style: italic; color: rgba(244,239,230,0.5); margin-bottom: 1.2rem; }
-    .loc-addr { font-size: 0.88rem; line-height: 1.65; color: rgba(244,239,230,0.65); margin-bottom: 1rem; }
-    .loc-note { font-size: 0.82rem; font-style: italic; color: rgba(244,239,230,0.4); margin-bottom: 1.5rem; line-height: 1.6; }
-    .loc-phone { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 1.05rem; color: var(--parchment); text-decoration: none; margin-bottom: 1.5rem; transition: color 0.2s; }
+    @media (max-width: 720px) {
+      .visit-location {
+        padding-left: 0;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(201,190,168,0.15);
+      }
+    }
+
+    .visit-location h3 {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .loc-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: var(--parchment);
+      margin-bottom: 0.15em;
+      line-height: 1.2;
+    }
+    .loc-sub {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(244,239,230,0.5);
+      margin-bottom: 1.2rem;
+    }
+    .loc-addr {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: rgba(244,239,230,0.65);
+      margin-bottom: 1rem;
+    }
+    .loc-note {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(244,239,230,0.4);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .loc-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--parchment);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
     .loc-phone:hover { color: var(--brass-light); }
 
     /* ======= GOSPEL STATEMENT ======= */
     #who-we-are { padding-bottom: clamp(3rem,7vw,5rem); }
-    .gospel-statement { font-family: var(--font-display); font-size: clamp(1.08rem, 2vw, 1.35rem); line-height: 1.95; color: var(--ink-soft); font-weight: 400; max-width: var(--max-w); margin: 2.5rem auto 0; padding: 2.8rem 3rem; border-left: 3px solid var(--oxblood); background: linear-gradient(115deg, var(--oxblood-glow) 0%, transparent 50%); position: relative; quotes: none; }
+
+    .gospel-statement {
+      font-family: var(--font-display);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.95;
+      color: var(--ink-soft);
+      font-weight: 400;
+      max-width: var(--max-w);
+      margin: 2.5rem auto 0;
+      padding: 2.8rem 3rem;
+      border-left: 3px solid var(--oxblood);
+      background: linear-gradient(115deg, var(--oxblood-glow) 0%, transparent 50%);
+      position: relative;
+      quotes: none;
+    }
     @media (max-width: 600px) { .gospel-statement { padding: 2rem 1.5rem; } }
-    .gospel-statement::first-letter { font-family: var(--font-display); font-size: 5em; font-weight: 700; line-height: 0.8; float: left; margin-right: 0.05em; margin-top: 0.08em; color: var(--oxblood); }
-    .gospel-attr { display: block; text-align: right; font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); margin-top: 1.5rem; font-style: normal; }
-    .gospel-sub-note { text-align: center; margin-top: 2.5rem; font-family: var(--font-display); font-size: 0.95rem; color: var(--ink-faint); font-style: italic; }
+
+    .gospel-statement::first-letter {
+      font-family: var(--font-display);
+      font-size: 5em;
+      font-weight: 700;
+      line-height: 0.8;
+      float: left;
+      margin-right: 0.05em;
+      margin-top: 0.08em;
+      color: var(--oxblood);
+    }
+
+    .gospel-attr {
+      display: block;
+      text-align: right;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-top: 1.5rem;
+      font-style: normal;
+    }
+
+    .gospel-sub-note {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--ink-faint);
+      font-style: italic;
+    }
 
     /* ======= THE GOSPEL ESSAY ======= */
-    #the-gospel { background: var(--parchment-dk); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
-    .gospel-feature { display: grid; grid-template-columns: 1fr 2.2fr; gap: 5rem; align-items: start; }
+    #the-gospel {
+      background: var(--parchment-dk);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .gospel-feature {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
     @media (max-width: 720px) { .gospel-feature { grid-template-columns: 1fr; gap: 2rem; } }
+
     .gospel-aside { padding-top: 0.3rem; }
-    .gospel-title-big { font-family: var(--font-display); font-size: clamp(2.5rem, 5.5vw, 4.2rem); font-weight: 600; line-height: 1.05; color: var(--ink); margin-bottom: 1.3rem; }
+    .gospel-title-big {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      font-weight: 600;
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 1.3rem;
+    }
     .gospel-title-big em { font-style: italic; color: var(--oxblood); }
-    .gospel-aside p { font-family: var(--font-display); font-size: 0.95rem; color: var(--ink-faint); line-height: 1.7; }
-    .essay-body h3 { font-family: var(--font-display); font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 600; color: var(--ink); margin-top: 2.5rem; margin-bottom: 0.8rem; }
+
+    .gospel-aside p {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      color: var(--ink-faint);
+      line-height: 1.7;
+    }
+
+    .essay-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
     .essay-body h3:first-child { margin-top: 0; }
-    .essay-body p { font-family: var(--font-display); font-size: clamp(0.98rem, 1.7vw, 1.12rem); line-height: 1.85; color: var(--ink-soft); margin-bottom: 1.1em; }
-    .essay-body blockquote { border-left: 2px solid var(--oxblood); padding: 0.6rem 0 0.6rem 1.5rem; margin: 1.5rem 0; font-style: italic; color: var(--ink-faint); }
-    .essay-body .scripture-block { margin: 2.5rem 0 2rem; padding: 1.8rem 2rem; border: 1px solid var(--hairline); background: var(--white-warm); text-align: center; }
-    .essay-body .scripture-block p { font-style: italic; font-size: 1.08rem; color: var(--ink-soft); margin-bottom: 0.5rem; }
-    .essay-body .scripture-block cite { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); font-style: normal; }
+
+    .essay-body p {
+      font-family: var(--font-display);
+      font-size: clamp(0.98rem, 1.7vw, 1.12rem);
+      line-height: 1.85;
+      color: var(--ink-soft);
+      margin-bottom: 1.1em;
+    }
+
+    .essay-body blockquote {
+      border-left: 2px solid var(--oxblood);
+      padding: 0.6rem 0 0.6rem 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--ink-faint);
+    }
+
+    .essay-body .scripture-block {
+      margin: 2.5rem 0 2rem;
+      padding: 1.8rem 2rem;
+      border: 1px solid var(--hairline);
+      background: var(--white-warm);
+      text-align: center;
+    }
+    .essay-body .scripture-block p {
+      font-style: italic;
+      font-size: 1.08rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.5rem;
+    }
+    .essay-body .scripture-block cite {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass);
+      font-style: normal;
+    }
+
+    /* Expand */
     .essay-preview { position: relative; }
     .essay-hidden { display: none; }
     .essay-hidden.open { display: block; }
-    .essay-toggle { font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass); background: none; border: none; cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s; margin-top: 1rem; }
+    .essay-toggle {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brass);
+      background: none; border: none; cursor: pointer;
+      padding: 0;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: color 0.2s;
+      margin-top: 1rem;
+    }
     .essay-toggle:hover { color: var(--oxblood); }
-    .essay-toggle .arrow { display: inline-block; transition: transform 0.3s ease; }
+    .essay-toggle .arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
     .essay-toggle.open .arrow { transform: rotate(180deg); }
 
     /* ======= BELIEFS ======= */
-    .beliefs-intro { font-family: var(--font-display); font-size: clamp(1.02rem, 1.8vw, 1.2rem); line-height: 1.85; color: var(--ink-soft); max-width: 620px; margin-bottom: 3rem; }
-    .confession-card { border: 1px solid var(--hairline); padding: 2.5rem 2.8rem; background: var(--white-warm); max-width: 660px; position: relative; margin-bottom: 2rem; }
+    #beliefs { }
+
+    .beliefs-intro {
+      font-family: var(--font-display);
+      font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+      line-height: 1.85;
+      color: var(--ink-soft);
+      max-width: 620px;
+      margin-bottom: 3rem;
+    }
+
+    .confession-card {
+      border: 1px solid var(--hairline);
+      padding: 2.5rem 2.8rem;
+      background: var(--white-warm);
+      max-width: 660px;
+      position: relative;
+      margin-bottom: 2rem;
+    }
     @media (max-width: 600px) { .confession-card { padding: 2rem 1.5rem; } }
-    .confession-card::after { content: '1689'; position: absolute; top: 0; right: 2rem; background: var(--oxblood); color: var(--parchment); font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.2em; padding: 0.35em 0.9em; font-weight: 600; }
+
+    .confession-card::after {
+      content: '1689';
+      position: absolute;
+      top: 0; right: 2rem;
+      background: var(--oxblood);
+      color: var(--parchment);
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      padding: 0.35em 0.9em;
+      font-weight: 600;
+    }
     .confession-card h3 { margin-bottom: 0.8rem; }
-    .confession-card p { font-family: var(--font-display); font-size: 1rem; line-height: 1.8; color: var(--ink-soft); margin-bottom: 1rem; }
-    .beliefs-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
-    .pillar { padding: 1.6rem; border: 1px solid var(--hairline); transition: border-color 0.25s, box-shadow 0.25s; }
-    .pillar:hover { border-color: var(--oxblood); box-shadow: 0 2px 12px var(--oxblood-glow); }
-    .pillar-label { font-family: var(--font-display); font-size: 0.63rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--brass); margin-bottom: 0.5rem; display: block; }
-    .pillar h4 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .pillar p { font-size: 0.86rem; line-height: 1.65; color: var(--ink-soft); margin: 0; }
+    .confession-card p {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+    }
+
+    .beliefs-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+    .pillar {
+      padding: 1.6rem;
+      border: 1px solid var(--hairline);
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .pillar:hover {
+      border-color: var(--oxblood);
+      box-shadow: 0 2px 12px var(--oxblood-glow);
+    }
+    .pillar-label {
+      font-family: var(--font-display);
+      font-size: 0.63rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .pillar h4 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .pillar p {
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      margin: 0;
+    }
 
     /* ======= LEADERSHIP ======= */
-    #leadership { background: var(--parchment-dk); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
-    .pastors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+    #leadership {
+      background: var(--parchment-dk);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .pastors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
     @media (max-width: 680px) { .pastors-grid { grid-template-columns: 1fr; gap: 3rem; } }
-    .pastor-photo-placeholder { width: 130px; height: 130px; margin-bottom: 1.5rem; border: 1.5px solid var(--hairline); display: flex; align-items: center; justify-content: center; background: rgba(201,190,168,0.12); }
-    .pastor-name { font-family: var(--font-display); font-size: 1.65rem; font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; }
-    .pastor-role { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); margin-bottom: 1.2rem; }
-    .pastor-bio { font-family: var(--font-display); font-size: 1.02rem; line-height: 1.82; color: var(--ink-soft); }
+
+    .pastor-photo-placeholder {
+      width: 130px;
+      height: 130px;
+      margin-bottom: 1.5rem;
+      border: 1.5px solid var(--hairline);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(201,190,168,0.12);
+    }
+    .pastor-name {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+    .pastor-role {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 1.2rem;
+    }
+    .pastor-bio {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      line-height: 1.82;
+      color: var(--ink-soft);
+    }
 
     /* ======= SERMONS ======= */
-    .sermons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+    .sermons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
     @media (max-width: 680px) { .sermons-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
     .res-block h3 { font-size: 1.45rem; margin-bottom: 0.6rem; }
-    .res-block p { font-family: var(--font-display); font-size: 0.95rem; line-height: 1.75; color: var(--ink-soft); margin-bottom: 1.3rem; }
+    .res-block p {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      margin-bottom: 1.3rem;
+    }
     .res-links { display: flex; flex-direction: column; gap: 0; }
-    .res-link { display: flex; align-items: center; gap: 0.7rem; font-family: var(--font-display); font-size: 0.92rem; color: var(--ink); text-decoration: none; padding: 0.7rem 0; border-bottom: 1px solid var(--hairline-lt); transition: color 0.2s, padding-left 0.25s; }
+    .res-link {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--hairline-lt);
+      transition: color 0.2s, padding-left 0.25s;
+    }
     .res-link:hover { color: var(--oxblood); padding-left: 0.3rem; }
-    .res-link::before { content: '\2192'; color: var(--brass); font-size: 0.82rem; }
+    .res-link::before { content: '→'; color: var(--brass); font-size: 0.82rem; }
 
     /* ======= FOOTER ======= */
-    footer { background: var(--ink); color: rgba(244,239,230,0.65); padding: 4rem 0 2.5rem; }
-    .ft-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(201,190,168,0.12); margin-bottom: 1.8rem; }
+    footer {
+      background: var(--ink);
+      color: rgba(244,239,230,0.65);
+      padding: 4rem 0 2.5rem;
+    }
+    .ft-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(201,190,168,0.12);
+      margin-bottom: 1.8rem;
+    }
     @media (max-width: 720px) { .ft-top { grid-template-columns: 1fr; gap: 2rem; } }
+
     .ft-brand .nav-wordmark { color: var(--parchment); font-size: 1.1rem; display: block; margin-bottom: 0.7rem; }
     .ft-brand p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 1rem; }
-    .ft-section h4 { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); margin-bottom: 1rem; }
+
+    .ft-section h4 {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 1rem;
+    }
     .ft-section ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .ft-section li { font-family: var(--font-display); font-size: 0.88rem; }
     .ft-section a { color: rgba(244,239,230,0.55); text-decoration: none; transition: color 0.2s; }
     .ft-section a:hover { color: var(--parchment); }
     .ft-section address { font-style: normal; font-family: var(--font-display); font-size: 0.88rem; line-height: 1.8; }
-    .ft-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+
+    .ft-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
     .ft-bottom p { font-size: 0.75rem; margin: 0; color: rgba(244,239,230,0.28); }
     .ft-bottom a { color: rgba(244,239,230,0.4); font-size: 0.75rem; }
     .ft-bottom a:hover { color: var(--parchment); }
 
     /* ======= ANIMATIONS ======= */
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    .anim { opacity: 0; transform: translateY(26px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
     .anim.vis { opacity: 1; transform: translateY(0); }
     .anim.d1 { transition-delay: 0.1s; }
     .anim.d2 { transition-delay: 0.22s; }
@@ -347,8 +1034,9 @@
       </div>
     </div>
   </section>
-  </div>
+  </div><!-- end .hero-slide-wrapper -->
 
+  <!-- All page content wrapped for freeze control -->
   <div class="page-content">
 
   <!-- ============ SECTION 2 — PLAN YOUR VISIT ============ -->
@@ -404,7 +1092,7 @@
     </div>
   </section>
 
-  <div class="ornament"><span>&#10016;</span></div>
+  <div class="ornament"><span>✠</span></div>
 
   <!-- ============ SECTION 4 — THE GOSPEL (TWO MEN, ALL MEN) ============ -->
   <section id="the-gospel" aria-labelledby="gospel-essay-heading">
@@ -420,15 +1108,20 @@
 
         <div class="essay-body anim d2">
 
+          <!-- TWO MEN -->
           <h3>Two Men</h3>
 
           <p>All historians have a problem. What do they include and what do they exclude from their accounts of world history? There are just too many facts, so they must decide what&rsquo;s significant and what&rsquo;s not. For example, it would be historical for a man to spend his whole lifetime researching the average number of belt loops ever used on pants. But that would hardly be significant! Well, when we come to the Bible we find two men are significant in world history. We find the apostle Paul looking all the way back to the beginning and referring to Adam as &ldquo;the first man&rdquo; (1 Corinthians 15:47).</p>
 
           <p>That&rsquo;s obvious to us because he is the first man to ever live. But then he shocks us. From there he scans across thousands of years, the lives of men like Alexander the Great and Aristotle are overlooked, and he fixes his eye on Jesus and calls Him &ldquo;the second man.&rdquo; This raises an obvious question. If Jesus is not the second man to ever live why did Paul give Him that name?</p>
 
-          <blockquote><p>Richard Gaffin writes: <em>As Paul is looking at things in this passage, no one between them &lsquo;counts.&rsquo;</em> (p. 47, By Faith, Not By Sight)</p></blockquote>
+          <blockquote>
+            <p>Richard Gaffin writes: <em>As Paul is looking at things in this passage, no one between them &lsquo;counts.&rsquo;</em> (p. 47, By Faith, Not By Sight)</p>
+          </blockquote>
 
-          <blockquote><p>Douglas Moo explains: <em>All people, Paul teaches, stand in relationship to one of two men, whose actions determine the eternal destiny of all who belong to them. Either one &lsquo;belongs to&rsquo; Adam and is under sentence of death because of his sin&hellip; or one belongs to Christ and is assured of eternal life because of his &lsquo;righteous&rsquo; act&hellip; The actions of Adam and Christ, then, are similar in having &lsquo;epochal&rsquo; significance.</em> (Romans, p.314&ndash;315)</p></blockquote>
+          <blockquote>
+            <p>Douglas Moo explains: <em>All people, Paul teaches, stand in relationship to one of two men, whose actions determine the eternal destiny of all who belong to them. Either one &lsquo;belongs to&rsquo; Adam and is under sentence of death because of his sin&hellip; or one belongs to Christ and is assured of eternal life because of his &lsquo;righteous&rsquo; act&hellip; The actions of Adam and Christ, then, are similar in having &lsquo;epochal&rsquo; significance.</em> (Romans, p.314&ndash;315)</p>
+          </blockquote>
 
           <p>We say certain movies have &lsquo;epic battle scenes&rsquo; by which we mean they have far reaching effects in the world. So Moo is saying these two men are &ldquo;epic&rdquo; due to the far reaching effects they have upon the world.</p>
 
@@ -437,12 +1130,14 @@
           <p>Therefore the only question that remains is to ask &ldquo;what exactly has been counted to all men as a result of the actions of these two men?&rdquo;</p>
 
           <div class="essay-preview">
+
             <button class="essay-toggle" id="essay-btn" aria-expanded="false" aria-controls="essay-rest">
               Continue Reading &mdash; All Men <span class="arrow">&#9660;</span>
             </button>
 
             <div class="essay-hidden" id="essay-rest" aria-hidden="true">
 
+              <!-- ALL MEN -->
               <h3>All Men</h3>
 
               <p>Well, in Romans 5:18&ndash;19 we find the answer&hellip; <strong>First,</strong> in 5:18&ndash;19 we see that all men are either counted condemned or justified. 5:18 speaks of either &lsquo;condemnation to all men&rsquo; or &lsquo;justification of life to all men.&rsquo; And 5:19 speaks of men as being either &lsquo;appointed sinners&rsquo; or &lsquo;appointed righteous.&rsquo; This one simple truth shatters religion! Every person you know is either 100% condemned as a sinner or 100% justified as righteous in the sight of God. Nobody is &ldquo;pretty good&rdquo;, or able to say &ldquo;well nobody&rsquo;s perfect.&rdquo; Nor is anyone in any religious process of becoming good enough. Everyone on this planet right now today is in a condemned or justified state. This is shocking! And it&rsquo;s because the word &lsquo;justify&rsquo; means to declare right not to make right. It is a legal act not a surgical act. It happens outside of you not inside of you. It&rsquo;s concerned with what God thinks about you not what you think about you. We know this because it&rsquo;s contrasted here with condemnation.</p>
@@ -457,7 +1152,9 @@
 
               <p>Now what is the implication of such good news? <strong>There&rsquo;s no boasting.</strong></p>
 
-              <blockquote><p>Martyn Lloyd-Jones tells us: <em>Look at yourself in Adam; though you had done nothing you were declared a sinner. Look at yourself in Christ; and see that, though you have done nothing, you are declared to be righteous. That is the parallel. We must get rid of all thoughts of our actions. There is no boasting. We do nothing; all we are and have results from the obedience of the One &mdash; our Lord.</em> (p.274, Romans, vol.4)</p></blockquote>
+              <blockquote>
+                <p>Martyn Lloyd-Jones tells us: <em>Look at yourself in Adam; though you had done nothing you were declared a sinner. Look at yourself in Christ; and see that, though you have done nothing, you are declared to be righteous. That is the parallel. We must get rid of all thoughts of our actions. There is no boasting. We do nothing; all we are and have results from the obedience of the One &mdash; our Lord.</em> (p.274, Romans, vol.4)</p>
+              </blockquote>
 
               <p>That&rsquo;s what I want you to do, look at yourself in all this to see where you are. Sometimes in a mall you&rsquo;ll see the map that says &ldquo;you are here.&rdquo; Well where are you in all this? We have seen that there are these two men, and their actions determine the destinies of all men. Are you in Adam or in Christ? Are you justified or condemned? Are you believing, or are you working? Because the gospel comes to you as a message of salvation accomplished not a message for you to accomplish salvation. It comes proclaiming a deed already finished and done, that you might be finished and done with deeds. It announces the absolute irrelevance of your actions. It not only says that your deeds do not justify you, they don&rsquo;t even condemn you!</p>
 
@@ -523,183 +1220,207 @@
 
   <!-- ============ SECTION 6 — LEADERSHIP ============ -->
   <section id="leadership" aria-labelledby="leadership-heading">
-    <div class="container-wide">
+    <div class="container">
       <div class="anim">
         <span class="section-label">Our Pastors</span>
         <h2 id="leadership-heading">Leadership</h2>
       </div>
 
       <div class="pastors-grid">
-        <div class="anim d1">
-          <div class="pastor-photo-placeholder" aria-hidden="true">
-            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+
+        <article class="pastor-card anim d1">
+          <!--
+            HEADSHOT — Jeffrey Mercer
+            Replace with: <img src="data:image/jpeg;base64,..." alt="Pastor Jeffrey Mercer" class="pastor-photo" width="130" height="130" loading="lazy" />
+            Source: cfcenla.com/wp-content/uploads/2023/08/IMG_8735.jpeg
+          -->
+          <div class="pastor-photo-placeholder" role="img" aria-label="Photo of Pastor Jeffrey Mercer">
+            <svg width="48" height="48" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="20" r="11" stroke="#C9BEA8" stroke-width="1.5"/><path d="M6 52c0-12.15 9.85-22 22-22s22 9.85 22 22" stroke="#C9BEA8" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <h3 class="pastor-name">Jeffrey Mercer</h3>
           <p class="pastor-role">Pastor</p>
-          <p class="pastor-bio">Jeffrey Mercer was called to the gospel ministry in 2006, after which he entered into seminary. Then in 2010 he was called to pastor Christ Fellowship of Cenla, where he has ministered ever since. He is husband to Challie, and father to Anabelle and Abram. Jeffrey&rsquo;s favorite verses are the verses on which he&rsquo;s currently preaching.</p>
-        </div>
+          <div class="pastor-bio">
+            <p>Jeffrey Mercer was called to the gospel ministry in 2006, after which he entered into seminary. Then in 2010 he was called to pastor Christ Fellowship of Cenla, where he has ministered ever since. He is husband to Challie, and father to Anabelle and Abram. Jeffrey&rsquo;s favorite verses are the verses on which he&rsquo;s currently preaching.</p>
+          </div>
+        </article>
 
-        <div class="anim d2">
-          <div class="pastor-photo-placeholder" aria-hidden="true">
-            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24" opacity="0.3"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+        <article class="pastor-card anim d2">
+          <!--
+            HEADSHOT — Justin Morgan
+            Replace with: <img src="data:image/jpeg;base64,..." alt="Pastor Justin Morgan" class="pastor-photo" width="130" height="130" loading="lazy" />
+            Source: cfcenla.com/wp-content/uploads/2025/07/justinmorganheadshot-7463-scaled.jpeg
+          -->
+          <div class="pastor-photo-placeholder" role="img" aria-label="Photo of Pastor Justin Morgan">
+            <svg width="48" height="48" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="20" r="11" stroke="#C9BEA8" stroke-width="1.5"/><path d="M6 52c0-12.15 9.85-22 22-22s22 9.85 22 22" stroke="#C9BEA8" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
           <h3 class="pastor-name">Justin Morgan</h3>
           <p class="pastor-role">Pastor</p>
-          <p class="pastor-bio">Justin Morgan began attending Christ Fellowship in 2011 and was called to the gospel ministry in 2024. He is currently enrolled at Grace Bible Theological Seminary in the Certificate of Ministry Program. He is husband to Cacy, and father to Liam, Truett, Conrad, and Elliot.</p>
-        </div>
+          <div class="pastor-bio">
+            <p>Justin Morgan began attending Christ Fellowship in 2011 and was called to the gospel ministry in 2024. He is currently enrolled at Grace Bible Theological Seminary in the Certificate of Ministry Program. He is husband to Cacy, and father to Liam, Truett, Conrad, and Elliot.</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- ============ SECTION 7 — SERMONS & RESOURCES ============ -->
+  <!-- ============ SECTION 7 — SERMONS & GIVING ============ -->
   <section id="sermons" aria-labelledby="sermons-heading">
-    <div class="container-wide">
+    <div class="container">
       <div class="anim">
-        <span class="section-label">Hear the Word Preached</span>
-        <h2 id="sermons-heading">Sermons &amp; Resources</h2>
+        <span class="section-label">Connect with the Church</span>
+        <h2 id="sermons-heading">Sermons &amp; Giving</h2>
       </div>
 
       <div class="sermons-grid">
         <div class="res-block anim d1">
-          <h3>Listen to Sermons</h3>
-          <p>Our sermons are available through SermonAudio. We preach expositionally through books of the Bible, letting Scripture set the agenda for the life of our church.</p>
+          <h3>Sermons</h3>
+          <p>Every Sunday sermon is available through SermonAudio and our YouTube channel. Listen to expository preaching through the Word &mdash; faithful to the text, clear in application.</p>
           <div class="res-links">
-            <a href="https://www.sermonaudio.com/source_detail.asp?sourceid=christfelowship" target="_blank" rel="noopener noreferrer" class="res-link">SermonAudio</a>
-            <a href="https://www.facebook.com/cfcenla" target="_blank" rel="noopener noreferrer" class="res-link">Facebook</a>
+            <a href="https://www.sermonaudio.com/source/cfcenla" target="_blank" rel="noopener noreferrer" class="res-link">SermonAudio Archive</a>
+            <a href="https://www.youtube.com/@ChristFellowshipofCenla" target="_blank" rel="noopener noreferrer" class="res-link">YouTube Live &amp; Archive</a>
           </div>
         </div>
-
         <div class="res-block anim d2">
-          <h3>Give</h3>
-          <p>If you would like to support the ministry of Christ Fellowship Church, you may give online or in person during our Sunday gathering.</p>
+          <h3>Give &amp; Register</h3>
+          <p>Online giving and event registration are managed through Planning Center. Your giving supports the ministry of Word and prayer here in Central Louisiana.</p>
           <div class="res-links">
-            <a href="https://cfcenla.com/give" target="_blank" rel="noopener noreferrer" class="res-link">Give Online</a>
+            <a href="https://giving.planningcenteronline.com/give/cfcenla" target="_blank" rel="noopener noreferrer" class="res-link">Give Online</a>
+            <a href="https://www.planningcenteronline.com/registrations/cfcenla" target="_blank" rel="noopener noreferrer" class="res-link">Conference Registration</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  </div><!-- end .page-content -->
-
   <!-- ============ FOOTER ============ -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container-wide">
       <div class="ft-top">
         <div class="ft-brand">
-          <a href="#hero" class="nav-wordmark">Christ <em>Fellowship</em></a>
-          <p>A confessional Reformed Baptist congregation in Alexandria, Louisiana, devoted to the fellowship of the gospel and the Reformed faith as expressed in the 1689 London Baptist Confession.</p>
-          <a href="https://www.facebook.com/cfcenla" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="font-size:0.65rem; padding:0.5em 1.2em;">Follow on Facebook</a>
+          <a href="#hero" class="nav-wordmark">Christ Fellowship Church</a>
+          <p>A confessional Reformed Baptist congregation in Alexandria, Louisiana, holding to the 1689 London Baptist Confession and committed to expository preaching of the Word of God.</p>
+          <a href="https://www.facebook.com/cfcenla" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="font-size:0.68rem;padding:0.5em 1.2em;">Follow on Facebook</a>
         </div>
-
         <div class="ft-section">
-          <h4>Navigate</h4>
+          <h4>Gather With Us</h4>
           <ul>
-            <li><a href="#visit">Plan a Visit</a></li>
-            <li><a href="#who-we-are">The Gospel</a></li>
-            <li><a href="#beliefs">What We Believe</a></li>
-            <li><a href="#leadership">Leadership</a></li>
-            <li><a href="#sermons">Sermons</a></li>
+            <li>Sunday Prayer &mdash; 9:30 <span class="sc">am</span></li>
+            <li>Sunday Service &mdash; 10:30 <span class="sc">am</span></li>
+            <li>Wednesday &mdash; 6:30 <span class="sc">pm</span></li>
+            <li style="margin-top:0.8rem;font-style:italic;font-size:0.82rem;color:rgba(244,239,230,0.35);">Lake Charles Room, Holiday Inn<br>Downtown Alexandria</li>
           </ul>
         </div>
-
         <div class="ft-section">
-          <h4>Contact</h4>
+          <h4>Find Us</h4>
           <address>
-            701 4th St<br>
-            Alexandria, LA 71301<br><br>
-            <a href="tel:+13184194497">(318) 419-4497</a>
+            701 4th St<br>Alexandria, LA 71301<br><br>
+            <a href="tel:+13184194497">(318) 419-4497</a><br>
+            <a href="https://maps.google.com/?q=701+4th+St+Alexandria+LA+71301" target="_blank" rel="noopener noreferrer">Get Directions &rarr;</a>
           </address>
         </div>
       </div>
-
       <div class="ft-bottom">
-        <p>&copy; 2025 Christ Fellowship Church of Cenla. All rights reserved.</p>
-        <a href="https://founders.org/1689-confession/" target="_blank" rel="noopener noreferrer">1689 Confession</a>
+        <p>&copy; <span id="yr"></span> Christ Fellowship Church of Cenla. All rights reserved.</p>
+        <a href="https://cfcenla.com">cfcenla.com</a>
       </div>
     </div>
   </footer>
 
+  </div><!-- end .page-content -->
+
+  <!-- JS -->
   <script>
-    /* Hero slide-over animation */
-    const heroWrapper = document.querySelector('.hero-slide-wrapper');
-    const pageContent = document.querySelector('.page-content');
-    const heroSection = document.getElementById('hero');
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Nav scroll
     const nav = document.getElementById('main-nav');
-    let slideDone = false;
-    let ticking = false;
-
-    function handleScroll() {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
-      const slideDistance = vh; // scroll 1 viewport to complete the slide
-
-      // Nav background
-      nav.classList.toggle('scrolled', scrollY > 60);
-
-      if (scrollY < slideDistance) {
-        // During the slide: translate page-content upward over the hero
-        slideDone = false;
-        pageContent.classList.remove('frozen');
-        pageContent.style.transform = '';
-        pageContent.style.marginTop = (vh - scrollY) + 'px';
-        // Fade hero slightly as content covers it
-        heroSection.style.opacity = 1 - (scrollY / slideDistance) * 0.3;
-      } else {
-        // Slide complete: freeze content in normal flow
-        if (!slideDone) {
-          slideDone = true;
-          pageContent.style.marginTop = '0px';
-          heroSection.style.opacity = 0.7;
-        }
-      }
-    }
-
+    let navTicking = false;
     window.addEventListener('scroll', () => {
-      if (!ticking) {
+      if (!navTicking) {
         requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
+          nav.classList.toggle('scrolled', window.scrollY > 50);
+          navTicking = false;
         });
-        ticking = true;
+        navTicking = true;
       }
-    });
+    }, { passive: true });
 
-    // Init on load
-    handleScroll();
-
-    /* Hamburger */
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      hamburger.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', open);
+    // Mobile menu
+    const ham = document.getElementById('hamburger');
+    const links = document.getElementById('nav-links');
+    ham.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      ham.classList.toggle('open', open);
+      ham.setAttribute('aria-expanded', open);
     });
-    navLinks.querySelectorAll('a').forEach(a => {
+    links.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+        links.classList.remove('open');
+        ham.classList.remove('open');
+        ham.setAttribute('aria-expanded', false);
       });
     });
 
-    /* Scroll reveal */
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); observer.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.15 });
-    document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+    // Horizontal slide on scroll with frozen content reveal
+    const hero = document.getElementById('hero');
+    const heroWrapper = document.querySelector('.hero-slide-wrapper');
+    const pageContent = document.querySelector('.page-content');
+    let heroTicking = false;
 
-    /* Essay toggle */
+    function updateHeroSlide() {
+      if (!heroWrapper) return;
+
+      const scrollY = window.pageYOffset;
+      const wrapperHeight = 200 * window.innerHeight / 100; // 200vh in px
+
+      // Progress through the wrapper
+      const progress = Math.min(scrollY / window.innerHeight, 1);
+
+      // Slide hero left based on progress
+      const translateX = progress * -100;
+      hero.style.transform = `translateX(${translateX}%)`;
+
+      // Freeze page content during slide, unfreeze after
+      if (scrollY < window.innerHeight) {
+        pageContent.classList.add('frozen');
+        hero.style.pointerEvents = 'auto';
+      } else {
+        pageContent.classList.remove('frozen');
+        hero.style.pointerEvents = 'none';
+      }
+
+      heroTicking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!heroTicking) {
+        requestAnimationFrame(updateHeroSlide);
+        heroTicking = true;
+      }
+    }, { passive: true });
+
+    updateHeroSlide();
+
+    // Initial check
+    updateHeroSlide();
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.anim').forEach(el => obs.observe(el));
+
+    // Essay toggle
     const essayBtn = document.getElementById('essay-btn');
     const essayRest = document.getElementById('essay-rest');
     essayBtn.addEventListener('click', () => {
       const open = essayRest.classList.toggle('open');
-      essayBtn.classList.toggle('open');
+      essayBtn.classList.toggle('open', open);
       essayBtn.setAttribute('aria-expanded', open);
       essayRest.setAttribute('aria-hidden', !open);
-      if (open) essayBtn.innerHTML = 'Collapse <span class="arrow">&#9660;</span>';
-      else essayBtn.innerHTML = 'Continue Reading &mdash; All Men <span class="arrow">&#9660;</span>';
     });
   </script>
 
