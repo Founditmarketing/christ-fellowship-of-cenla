@@ -634,14 +634,24 @@
     /* ======= GOSPEL STATEMENT ======= */
     #who-we-are { padding-bottom: clamp(3rem,7vw,5rem); }
 
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) { .who-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+    .who-aside { padding-top: 0.3rem; }
+    .who-aside h2 { margin-bottom: 1rem; }
+
     .gospel-statement {
       font-family: var(--font-display);
       font-size: clamp(1.08rem, 2vw, 1.35rem);
       line-height: 1.95;
       color: var(--ink-soft);
       font-weight: 400;
-      max-width: var(--max-w);
-      margin: 2.5rem auto 0;
+      margin: 0;
       padding: 2.8rem 3rem;
       border-left: 3px solid var(--oxblood);
       background: linear-gradient(115deg, var(--oxblood-glow) 0%, transparent 50%);
@@ -674,8 +684,7 @@
     }
 
     .gospel-sub-note {
-      text-align: center;
-      margin-top: 2.5rem;
+      margin-top: 1.5rem;
       font-family: var(--font-display);
       font-size: 0.95rem;
       color: var(--ink-faint);
@@ -1086,18 +1095,19 @@
 
   <!-- ============ SECTION 3 — GOSPEL STATEMENT ============ -->
   <section id="who-we-are" aria-labelledby="whoweare-heading">
-    <div class="container">
-      <div class="anim">
-        <span class="section-label">The Christ Fellowship Statement of the Gospel</span>
-        <h2 id="whoweare-heading">Who We Are</h2>
+    <div class="container-wide">
+      <div class="who-grid">
+        <div class="who-aside anim">
+          <span class="section-label">The Christ Fellowship Statement of the Gospel</span>
+          <h2 id="whoweare-heading">Who We Are</h2>
+          <p class="gospel-sub-note">For a fuller description of our beliefs, <a href="#beliefs">see what we believe</a> below.</p>
+        </div>
+
+        <blockquote class="gospel-statement anim d2">
+          We believe that Jesus is the Christ, the Son of the Living God, that God raised Him from the dead and He is Lord, and therefore we have nowhere else to go, for He has the words of eternal life. We believe that He is the promised Son who crushed the serpent&rsquo;s head, that He was born of the Virgin Mary by the Power of the Holy Spirit, He therefore is truly Man and yet truly God, nevertheless He is but One Person, the Lord Jesus Christ, who by His incarnation became the New Adam who obeyed the Law of God on our behalf, all the way to the point of death, even the death of the cross, that He was buried, but according to the Scriptures and His own righteousness, He was not allowed to suffer decay but was raised up on the third day by the power of God for our justification, and after appearing to many witnesses He ascended into heaven where He sat down at the right hand of the Majesty on high, where having finished His work He ever lives to intercede for us, and is able to save to the uttermost any who come to God through Him, if they come by faith alone in Him alone apart from works of the Law, and that from this position of glory He rules the world, that He will return to judge those who do not obey the gospel and to save those who do, and that having been raised from the dead in their glorious bodies, fully redeemed from the curse of sin, the law, and the grave, they shall ever be with the Lord, shall ever go on increasing in the knowledge of His grace, and shall ever go on glorifying Him and enjoying Him, unto the ages of the ages, Amen.
+          <cite class="gospel-attr">&mdash; Christ Fellowship Church of Cenla</cite>
+        </blockquote>
       </div>
-
-      <blockquote class="gospel-statement anim d2">
-        We believe that Jesus is the Christ, the Son of the Living God, that God raised Him from the dead and He is Lord, and therefore we have nowhere else to go, for He has the words of eternal life. We believe that He is the promised Son who crushed the serpent&rsquo;s head, that He was born of the Virgin Mary by the Power of the Holy Spirit, He therefore is truly Man and yet truly God, nevertheless He is but One Person, the Lord Jesus Christ, who by His incarnation became the New Adam who obeyed the Law of God on our behalf, all the way to the point of death, even the death of the cross, that He was buried, but according to the Scriptures and His own righteousness, He was not allowed to suffer decay but was raised up on the third day by the power of God for our justification, and after appearing to many witnesses He ascended into heaven where He sat down at the right hand of the Majesty on high, where having finished His work He ever lives to intercede for us, and is able to save to the uttermost any who come to God through Him, if they come by faith alone in Him alone apart from works of the Law, and that from this position of glory He rules the world, that He will return to judge those who do not obey the gospel and to save those who do, and that having been raised from the dead in their glorious bodies, fully redeemed from the curse of sin, the law, and the grave, they shall ever be with the Lord, shall ever go on increasing in the knowledge of His grace, and shall ever go on glorifying Him and enjoying Him, unto the ages of the ages, Amen.
-        <cite class="gospel-attr">&mdash; Christ Fellowship Church of Cenla</cite>
-      </blockquote>
-
-      <p class="gospel-sub-note anim d3">For a fuller description of our beliefs, <a href="#beliefs">see what we believe</a> below.</p>
     </div>
   </section>
 
