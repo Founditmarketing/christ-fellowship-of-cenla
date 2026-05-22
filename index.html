@@ -482,6 +482,39 @@
     #visit .section-label { color: var(--brass-light); }
     #visit h2 { color: var(--parchment); margin-bottom: 0.3em; }
 
+    .avail-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1.8rem;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(244,239,230,0.55);
+    }
+    .avail-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #6b7280;
+      flex-shrink: 0;
+    }
+    .avail-dot.live {
+      background: #4ade80;
+      box-shadow: 0 0 0 0 rgba(74,222,128,0.6);
+      animation: pulse-green 1.8s ease-out infinite;
+    }
+    .avail-dot.today {
+      background: var(--brass-light);
+    }
+    @keyframes pulse-green {
+      0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.6); }
+      70%  { box-shadow: 0 0 0 7px rgba(74,222,128,0); }
+      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+    }
+    .avail-text.live { color: #4ade80; }
+
     .visit-intro {
       font-family: var(--font-display);
       font-size: 1.05rem;
@@ -1035,6 +1068,10 @@
       <div class="anim">
         <span class="section-label">We&rsquo;d Love to See You</span>
         <h2 id="visit-heading">Plan Your Visit</h2>
+        <div class="avail-indicator" id="avail-indicator" aria-live="polite">
+          <span class="avail-dot" id="avail-dot"></span>
+          <span class="avail-text" id="avail-text"></span>
+        </div>
       </div>
 
       <div class="visit-grid anim d2">
@@ -1344,6 +1381,68 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.anim').forEach(el => obs.observe(el));
+
+    // Availability indicator
+    (function () {
+      const SERVICES = [
+        { day: 0, start: [9, 30],  end: [10, 0],  label: 'Sunday Prayer' },
+        { day: 0, start: [10, 30], end: [12, 0],  label: 'Sunday Service' },
+        { day: 3, start: [18, 30], end: [19, 30], label: 'Wednesday Service' },
+      ];
+      const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+      function toMins(h, m) { return h * 60 + m; }
+
+      function update() {
+        const now = new Date();
+        const day = now.getDay();
+        const mins = toMins(now.getHours(), now.getMinutes());
+        const dot  = document.getElementById('avail-dot');
+        const txt  = document.getElementById('avail-text');
+
+        // Check if currently in a service
+        const live = SERVICES.find(s => s.day === day && mins >= toMins(...s.start) && mins < toMins(...s.end));
+        if (live) {
+          dot.className = 'avail-dot live';
+          txt.className = 'avail-text live';
+          txt.textContent = live.label + ' in progress';
+          return;
+        }
+
+        // Check if a service is coming later today
+        const upcoming = SERVICES.filter(s => s.day === day && toMins(...s.start) > mins)
+                                  .sort((a, b) => toMins(...a.start) - toMins(...b.start))[0];
+        if (upcoming) {
+          dot.className = 'avail-dot today';
+          txt.className = 'avail-text';
+          const [h, m] = upcoming.start;
+          const ampm = h >= 12 ? 'PM' : 'AM';
+          const h12 = h > 12 ? h - 12 : h;
+          const mStr = m === 0 ? '' : `:${String(m).padStart(2,'0')}`;
+          txt.textContent = `${upcoming.label} today at ${h12}${mStr} ${ampm}`;
+          return;
+        }
+
+        // Find the next service on a future day
+        let next, daysAhead = 0;
+        for (let i = 1; i <= 7; i++) {
+          const d = (day + i) % 7;
+          const s = SERVICES.filter(sv => sv.day === d).sort((a,b) => toMins(...a.start) - toMins(...b.start))[0];
+          if (s) { next = s; daysAhead = i; break; }
+        }
+        dot.className = 'avail-dot';
+        txt.className = 'avail-text';
+        const [h, m] = next.start;
+        const ampm = h >= 12 ? 'PM' : 'AM';
+        const h12 = h > 12 ? h - 12 : h;
+        const mStr = m === 0 ? '' : `:${String(m).padStart(2,'0')}`;
+        const dayName = daysAhead === 1 ? 'Tomorrow' : DAYS[next.day];
+        txt.textContent = `Next service ${dayName} at ${h12}${mStr} ${ampm}`;
+      }
+
+      update();
+      setInterval(update, 60000);
+    }());
 
     // Essay toggle
     const essayBtn = document.getElementById('essay-btn');
