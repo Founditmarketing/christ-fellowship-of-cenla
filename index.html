@@ -351,11 +351,11 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 7rem var(--pad) 4rem;
+      padding: clamp(4.5rem, 9vh, 7rem) var(--pad) clamp(2rem, 4vh, 4rem);
       position: sticky;
       top: 0;
       z-index: 100;
-      overflow: hidden;
+      overflow-x: clip;
       background:
         radial-gradient(ellipse 80% 60% at 50% 40%, var(--cream) 0%, var(--parchment) 100%);
       will-change: transform;
@@ -414,7 +414,7 @@
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--brass);
-      margin-bottom: 2.2rem;
+      margin-bottom: clamp(1rem, 2.5vh, 2.2rem);
       opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
     }
     .hero-title {
@@ -438,14 +438,14 @@
       font-weight: 400;
       letter-spacing: 0.06em;
       color: var(--ink-faint);
-      margin-bottom: 3rem;
+      margin-bottom: clamp(1.2rem, 2.5vh, 3rem);
       opacity: 0; animation: fadeUp 0.9s ease 0.65s forwards;
     }
 
     .hero-scripture {
       max-width: 520px;
-      margin: 0 auto 3.2rem;
-      padding: 2rem 2rem;
+      margin: 0 auto clamp(1.5rem, 3vh, 3.2rem);
+      padding: clamp(1rem, 2vh, 2rem) 2rem;
       border-top: 1px solid var(--hairline);
       border-bottom: 1px solid var(--hairline);
       position: relative;
