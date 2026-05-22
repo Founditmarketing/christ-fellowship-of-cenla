@@ -419,11 +419,11 @@
     }
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 8.5vw, 6.5rem);
+      font-size: clamp(2.8rem, 7.5vw, 5rem);
       font-weight: 600;
       line-height: 1.02;
       color: var(--ink);
-      margin-bottom: 0.25em;
+      margin-bottom: 0.2em;
       letter-spacing: -0.015em;
       opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards;
     }
@@ -486,6 +486,15 @@
       gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
+    }
+
+    /* Short-viewport hero safety net */
+    @media (max-height: 820px) {
+      .hero-scripture { padding: 0.8rem 2rem; }
+      .hero-scripture p { font-size: 1rem; }
+    }
+    @media (max-height: 680px) {
+      .hero-scripture { display: none; }
     }
 
     /* ======= VISIT ======= */
