@@ -621,18 +621,52 @@
   </footer>
 
   <script>
-    /* Nav scroll */
+    /* Hero slide-over animation */
+    const heroWrapper = document.querySelector('.hero-slide-wrapper');
+    const pageContent = document.querySelector('.page-content');
+    const heroSection = document.getElementById('hero');
     const nav = document.getElementById('main-nav');
+    let slideDone = false;
     let ticking = false;
+
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+      const slideDistance = vh; // scroll 1 viewport to complete the slide
+
+      // Nav background
+      nav.classList.toggle('scrolled', scrollY > 60);
+
+      if (scrollY < slideDistance) {
+        // During the slide: translate page-content upward over the hero
+        slideDone = false;
+        pageContent.classList.remove('frozen');
+        pageContent.style.transform = '';
+        pageContent.style.marginTop = (vh - scrollY) + 'px';
+        // Fade hero slightly as content covers it
+        heroSection.style.opacity = 1 - (scrollY / slideDistance) * 0.3;
+      } else {
+        // Slide complete: freeze content in normal flow
+        if (!slideDone) {
+          slideDone = true;
+          pageContent.style.marginTop = '0px';
+          heroSection.style.opacity = 0.7;
+        }
+      }
+    }
+
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          nav.classList.toggle('scrolled', window.scrollY > 60);
+          handleScroll();
           ticking = false;
         });
         ticking = true;
       }
     });
+
+    // Init on load
+    handleScroll();
 
     /* Hamburger */
     const hamburger = document.getElementById('hamburger');
